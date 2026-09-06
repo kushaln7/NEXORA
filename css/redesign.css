@@ -1,0 +1,537 @@
+/* ═══════════════════════════════════════════════════════
+   NEXORA — redesign.css v2.0
+   Cinematic dark-space hero with massive Earth.
+   Premium glassmorphism UI, immersive depth.
+   Loaded after styles.css — overrides hero only.
+═══════════════════════════════════════════════════════ */
+
+/* ── HERO: Full dark-space immersion ─────────────── */
+.earth-hero {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  min-height: 680px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  overflow: hidden;
+  background: #000000;
+  color: #ffffff;
+  z-index: 0;
+}
+
+/* Override the parent .hero background */
+.hero.earth-hero {
+  background: #000000;
+}
+
+/* Kill the light grain on this section */
+.earth-hero::before {
+  opacity: 0;
+}
+
+/* Hero loader — dark */
+.earth-hero .hero-loader {
+  background: #000000;
+}
+
+.earth-hero .hero-loader-spinner {
+  border-color: rgba(255, 255, 255, 0.08);
+  border-top-color: #4d9aff;
+}
+
+.earth-hero .hero-loader-text {
+  color: rgba(255, 255, 255, 0.35);
+}
+
+/* ── EARTH VISUAL: True full-bleed canvas across entire hero ─────────── */
+.earth-hero-visual {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  pointer-events: none;
+  overflow: hidden;
+  margin: 0;
+}
+
+#earth-canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+  touch-action: pan-y;
+  pointer-events: none;
+  z-index: 1;
+}
+
+#earth-canvas.ready { opacity: 1; }
+
+.earth-fallback-img {
+  position: absolute;
+  inset: 5%;
+  width: 90%;
+  height: 90%;
+  border-radius: 50%;
+  object-fit: cover;
+  opacity: 0;
+  pointer-events: none;
+  box-shadow:
+    0 0 80px rgba(30, 100, 220, 0.3),
+    0 0 200px rgba(20, 60, 160, 0.15);
+}
+
+.earth-fallback-img.visible { opacity: 1; }
+
+/* ── HERO INNER: Text on left, Earth bleeding right ── */
+.earth-hero-inner {
+  position: relative;
+  z-index: 3;
+  width: 100%;
+  max-width: var(--max-w);
+  margin: 0 auto;
+  padding: 0 var(--gutter);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  height: 100%;
+  pointer-events: none;
+}
+
+.earth-hero-text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 24px;
+  max-width: 560px;
+  pointer-events: auto;
+  position: relative;
+  z-index: 5;
+}
+
+/* ── Text overrides for dark space hero ────────── */
+.earth-hero .hero-label {
+  color: #4d9aff;
+  opacity: 1;
+  animation: none;
+  font-size: 10px;
+  letter-spacing: 0.22em;
+  text-shadow: 0 0 20px rgba(77, 154, 255, 0.3);
+}
+
+.earth-hero .hero-headline {
+  animation: none;
+  opacity: 1;
+}
+
+.earth-hero .hl-line {
+  color: #ffffff;
+  text-shadow: 0 0 60px rgba(255, 255, 255, 0.08);
+}
+
+.earth-hero .hl-accent {
+  color: #4d9aff;
+  filter: brightness(1.1);
+  text-shadow: 0 0 40px rgba(77, 154, 255, 0.25);
+}
+
+.earth-hero .hero-rule {
+  animation: none;
+  background: linear-gradient(90deg, #4d9aff, transparent);
+  width: 64px;
+  height: 2px;
+  box-shadow: 0 0 12px rgba(77, 154, 255, 0.4);
+}
+
+.earth-hero .hero-sub {
+  color: rgba(255, 255, 255, 0.65);
+  opacity: 1;
+  animation: none;
+  max-width: 420px;
+  font-size: clamp(14px, 1.5vw, 17px);
+  line-height: 1.7;
+}
+
+/* ── Motion: start hidden, JS reveals ────────── */
+[data-reveal-child] { opacity: 0; }
+.no-js [data-reveal-child],
+[data-reveal-child].motion-fallback-visible { opacity: 1; }
+
+/* ── CTA BUTTONS: Glassmorphism on dark ────────── */
+.earth-hero-actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-top: 12px;
+  flex-wrap: wrap;
+  pointer-events: auto;
+}
+
+.earth-hero .cta-btn {
+  background: linear-gradient(135deg, #4d9aff 0%, #2563eb 100%);
+  color: #ffffff;
+  border: none;
+  padding: 16px 32px;
+  border-radius: 12px;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow:
+    0 4px 24px rgba(77, 154, 255, 0.3),
+    0 0 0 1px rgba(77, 154, 255, 0.1) inset;
+  position: relative;
+  overflow: hidden;
+}
+
+.earth-hero .cta-btn::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(255,255,255,0.15) 0%, transparent 50%);
+  border-radius: inherit;
+}
+
+.earth-hero .cta-btn:hover {
+  transform: translateY(-2px);
+  box-shadow:
+    0 8px 40px rgba(77, 154, 255, 0.45),
+    0 0 0 1px rgba(77, 154, 255, 0.2) inset;
+}
+
+.cta-btn-ghost {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.8);
+  background: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  padding: 16px 28px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 12px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.cta-btn-ghost:hover {
+  border-color: rgba(77, 154, 255, 0.5);
+  background: rgba(77, 154, 255, 0.12);
+  color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 20px rgba(77, 154, 255, 0.15);
+}
+
+/* ── SCROLL HINT: Animated, on dark ────────────── */
+.earth-hero .hero-scroll-hint .mono {
+  color: rgba(255, 255, 255, 0.35);
+}
+
+.earth-hero .hero-scroll-hint {
+  z-index: 5;
+}
+
+.earth-hero .scroll-line {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+/* ── NAV: Dark-transparent over space hero ─────── */
+.nav-dark-hero:not(.scrolled) {
+  background: transparent !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06) !important;
+}
+
+/* Make the dark logo visible on dark hero — invert + brighten */
+.nav-dark-hero:not(.scrolled) .nav-logo-img {
+  filter: brightness(0) invert(1);
+  transition: filter 0.3s ease;
+}
+
+.nav-dark-hero:not(.scrolled) .nav-link {
+  color: rgba(255, 255, 255, 0.7) !important;
+  font-weight: 500 !important;
+}
+
+.nav-dark-hero:not(.scrolled) .nav-link::after {
+  background: #4d9aff !important;
+}
+
+.nav-dark-hero:not(.scrolled) .nav-link:hover,
+.nav-dark-hero:not(.scrolled) .nav-link.active {
+  color: #ffffff !important;
+}
+
+.nav-dark-hero:not(.scrolled) .nav-cta {
+  background: rgba(255, 255, 255, 0.08) !important;
+  border: 1px solid rgba(255, 255, 255, 0.15) !important;
+  color: #ffffff !important;
+  backdrop-filter: blur(8px);
+}
+
+.nav-dark-hero:not(.scrolled) .nav-cta:hover {
+  background: rgba(77, 154, 255, 0.2) !important;
+  border-color: rgba(77, 154, 255, 0.4) !important;
+  color: #ffffff !important;
+}
+
+.nav-dark-hero:not(.scrolled) .nav-hamburger span {
+  background: #ffffff !important;
+}
+
+.nav-dark-hero:not(.scrolled) .nav-mobile-menu {
+  background: rgba(0, 0, 0, 0.95) !important;
+  backdrop-filter: blur(24px) !important;
+}
+
+.nav-dark-hero:not(.scrolled) .nav-mobile-menu a {
+  color: rgba(255, 255, 255, 0.65) !important;
+}
+
+.nav-dark-hero:not(.scrolled) .nav-mobile-menu a:hover {
+  color: #ffffff !important;
+}
+
+/* ── RESPONSIVE: Mobile ────────────────────────── */
+@media (max-width: 900px) {
+  .earth-hero {
+    height: 100svh;
+    min-height: min(100vh, 600px);
+  }
+
+  .earth-hero-visual {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 1; /* Keep globe vibrant & full fidelity on mobile */
+  }
+
+  .earth-fallback-img {
+    inset: auto;
+    left: 50%;
+    top: 64%;
+    transform: translate(-50%, -50%);
+    width: min(74vw, 340px);
+    height: min(74vw, 340px);
+    border-radius: 50%;
+  }
+
+  .earth-hero-inner {
+    padding-top: 88px;
+    padding-bottom: 30px;
+    align-items: flex-start;
+    text-align: left;
+  }
+
+  .earth-hero-text {
+    align-items: flex-start;
+    margin: 0;
+    max-width: 100%;
+    gap: 16px;
+  }
+
+  .earth-hero .hero-headline {
+    font-size: clamp(2.3rem, 7.5vw, 3.4rem);
+    line-height: 1.06;
+  }
+
+  .earth-hero .hero-sub {
+    font-size: 0.92rem;
+    line-height: 1.48;
+    max-width: 480px;
+    color: rgba(255, 255, 255, 0.78);
+  }
+
+  .earth-hero-actions {
+    justify-content: flex-start;
+    gap: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .earth-hero {
+    min-height: 520px;
+  }
+
+  .earth-hero-visual {
+    opacity: 1;
+  }
+
+  .earth-hero-inner {
+    padding-top: 74px;
+    padding-bottom: 24px;
+  }
+
+  .earth-hero-text {
+    gap: 14px;
+  }
+
+  .earth-hero .hero-label {
+    font-size: 0.68rem;
+    letter-spacing: 0.12em;
+  }
+
+  .earth-hero .hero-headline {
+    font-size: clamp(1.95rem, 8.8vw, 2.5rem);
+  }
+
+  .earth-hero .hero-sub {
+    font-size: 0.86rem;
+    line-height: 1.42;
+  }
+
+  .earth-hero-actions {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .earth-hero .cta-btn,
+  .earth-hero .cta-btn-ghost {
+    padding: 10px 18px;
+    font-size: 0.82rem;
+  }
+}
+
+/* ── Motion reveal target ──────────────────────── */
+[data-motion-reveal] { will-change: opacity, transform; }
+
+/* Hide the harsh border-top where dark meets light */
+.whoweare-section {
+  border-top: none !important;
+}
+
+.whoweare-section::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: 0;
+  right: 0;
+  height: 200px;
+  background: linear-gradient(to bottom, #000000 0%, rgba(0, 0, 0, 0.6) 30%, rgba(0, 0, 0, 0.2) 60%, transparent 100%);
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* ── BENTO CARDS: Richer glassmorphism ────────── */
+.bento-card {
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.bento-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 60px -20px rgba(0, 82, 204, 0.15);
+}
+
+/* ── SERVICE CARDS: Hover polish ────────────── */
+.service-detail-card {
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+              border-color 0.3s;
+}
+
+.service-detail-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 60px -20px rgba(0, 82, 204, 0.12);
+}
+
+.service-detail-card:hover .service-link-arrow {
+  color: var(--fire);
+}
+
+.service-detail-card:hover .service-icon-box {
+  background: var(--fire);
+  color: #ffffff;
+}
+
+.service-icon-box {
+  transition: background 0.3s, color 0.3s;
+}
+
+/* ── PORTFOLIO CARDS: Hover lift ──────────── */
+.portfolio-card {
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.portfolio-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 30px 80px -25px rgba(0, 0, 0, 0.25);
+}
+
+/* ── CTA SECTION: Dark gradient, premium feel ── */
+.cta-section {
+  position: relative;
+  overflow: hidden;
+}
+
+.cta-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: -20%;
+  width: 60%;
+  height: 60%;
+  background: radial-gradient(circle, rgba(0, 82, 204, 0.08) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+/* ── CTA FORM: Polished inputs ────────────── */
+.form-input {
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.form-input:focus {
+  border-color: var(--fire);
+  box-shadow: 0 0 0 3px rgba(0, 82, 204, 0.12);
+  outline: none;
+}
+
+/* ── FOOTER: Subtle top border glow ────────── */
+.footer {
+  position: relative;
+}
+
+.footer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 10%;
+  right: 10%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(0, 82, 204, 0.3), transparent);
+}
+
+/* ── BACK TO TOP: Glassmorphism ────────────── */
+.back-to-top {
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.back-to-top:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0, 82, 204, 0.25);
+}
+
+/* ── SMOOTH SCROLL BEHAVIOR OVERRIDE ────────── */
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}

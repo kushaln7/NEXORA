@@ -1,0 +1,72 @@
+# ═══════════════════════════════════════════════════════
+# CANONIX — Apache Rewrite Rules
+# Routes /api/* to api/index.php for PHP backend
+# ═══════════════════════════════════════════════════════
+
+RewriteEngine On
+
+# ── Force HTTPS (uncomment on Hostinger after SSL setup) ──
+# RewriteCond %{HTTPS} off
+# RewriteRule ^(.*)$ https://%{HTTP_HOST}/$1 [R=301,L]
+
+# ── Block sensitive files/folders ──
+RewriteRule ^\.env$ - [F,L]
+RewriteRule ^data/ - [F,L]
+RewriteRule ^api/config\.php$ - [F,L]
+
+# ── API Routing ──
+# /api/auth/check        → api/index.php?route=auth/check
+# /api/auth/login        → api/index.php?route=auth/login
+# /api/auth/logout       → api/index.php?route=auth/logout
+# /api/auth/password     → api/index.php?route=auth/password
+# /api/content           → api/index.php?route=content
+# /api/content/{section} → api/index.php?route=content&section={section}
+
+RewriteRule ^api/content/([a-zA-Z0-9_-]+)$ api/index.php?route=content&section=$1 [L,QSA]
+RewriteRule ^api/content$ api/index.php?route=content [L,QSA]
+RewriteRule ^api/content-public$ api/index.php?route=content-public [L,QSA]
+RewriteRule ^api/(auth/.+)$ api/index.php?route=$1 [L,QSA]
+
+# ── Clean URLs (optional: serve .html without extension) ──
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}\.html -f
+RewriteRule ^(.+)$ $1.html [L]
+
+# ── Custom 404 ──
+ErrorDocument 404 /404.html
+
+# ── Security Headers ──
+<IfModule mod_headers.c>
+    Header set X-Content-Type-Options "nosniff"
+    Header set X-Frame-Options "SAMEORIGIN"
+    Header set X-XSS-Protection "1; mode=block"
+    Header set Referrer-Policy "strict-origin-when-cross-origin"
+</IfModule>
+
+# ── HTML must never be cached (so hydrate.js + content updates reach users) ──
+<IfModule mod_headers.c>
+    <FilesMatch "\.html$">
+        Header set Cache-Control "no-store, no-cache, must-revalidate"
+        Header set Pragma "no-cache"
+        Header set Expires "0"
+    </FilesMatch>
+</IfModule>
+
+# ── Caching for static assets ──
+<IfModule mod_expires.c>
+    ExpiresActive On
+    ExpiresByType text/html "access plus 0 seconds"
+    ExpiresByType text/css "access plus 1 month"
+    ExpiresByType application/javascript "access plus 1 month"
+    ExpiresByType image/png "access plus 1 year"
+    ExpiresByType image/jpeg "access plus 1 year"
+    ExpiresByType image/webp "access plus 1 year"
+    ExpiresByType image/svg+xml "access plus 1 year"
+    ExpiresByType font/woff2 "access plus 1 year"
+</IfModule>
+
+# ── Gzip compression ──
+<IfModule mod_deflate.c>
+    AddOutputFilterByType DEFLATE text/html text/css application/javascript application/json image/svg+xml
+</IfModule>

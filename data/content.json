@@ -1,326 +1,256 @@
 {
-  "_lastModified": "2026-02-27T13:22:28.359Z",
+  "_lastModified": "2026-09-25T17:50:00.000Z",
   "home": {
     "hero": {
-      "label": "NEXORA — AI SYSTEMS / EST. 2024",
-      "headline1": "We Architect",
-      "headline2": "Intelligence.",
-      "subtitle": "Systems before scale.<br />Structure before speed."
+      "label": "PRODUCT STUDIO / HYDERABAD, IN",
+      "headline1": "We Build Software",
+      "headline2": "That Holds Up.",
+      "subtitle": "Strategy, design and engineering from one senior team in Hyderabad. No handoffs, no layers, no waiting on someone else's roadmap."
     },
-    "suite": {
-      "sectionTitle": "Our Divisions",
-      "sectionSubtitle": "Specialized divisions, one unified vision — delivering comprehensive technology solutions and streamlined process engineering across every domain.",
-      "cards": [
+    "stats": {
+      "projects": "7+",
+      "projectsLabel": "products live and in use",
+      "timeline": "2–4 weeks",
+      "timelineLabel": "to deliver the project",
+      "worth": "₹8L+",
+      "worthLabel": "projects worth shipped",
+      "team": "5",
+      "teamLabel": "senior team, no layers"
+    },
+    "about": {
+      "sectionBadge": "ABOUT LAUNCHLUME",
+      "sectionTitle": "We build the software<br><span class=\"hl-accent\">a business runs on.</span>",
+      "sectionSubtitle": "LaunchLume is a five-person product studio in Hyderabad. We shipped paid client work before we called ourselves a studio.",
+      "story": "We were paid to build before we called ourselves a studio. LaunchLume started with five of us studying at NIAT. Through the Brave program we took on real client work — not coursework, not concepts — and delivered more than ₹8 lakh of it before we ever registered a company. That order is the whole point. Most studios start with a name and go looking for proof. We had the proof first: shipped products, paid invoices, clients who came back. So the five of us still sit at one table in Hyderabad. We take fewer projects than we could, stay close to every decision, and ship software people actually use.",
+      "principles": [
         {
           "num": "01",
-          "name": "Projex",
-          "tagline": "Academic Innovation & Project Support",
-          "description": "Final year projects, internships, research mentorship, and lab setup support for institutions and students.",
-          "link": "https://projex.nexora.nexora.in",
-          "accent": "#6366F1"
+          "title": "Clarity over theatre",
+          "desc": "The hard truth early is more valuable than a polished surprise late."
         },
         {
           "num": "02",
-          "name": "Nexora Digital",
-          "tagline": "Web Application Engineering",
-          "description": "",
-          "link": "nexora-digital.html",
-          "accent": "#3B82F6"
+          "title": "Momentum with intent",
+          "desc": "Speed matters when it is pointed at the right outcome."
         },
         {
           "num": "03",
-          "name": "AetherAI",
-          "tagline": "Artificial Intelligence Systems",
-          "description": "",
-          "link": "aetherai.html",
-          "accent": "#A855F7"
+          "title": "Own the outcome",
+          "desc": "We stay accountable beyond the handoff and the happy path."
         },
         {
           "num": "04",
-          "name": "Nexora Labs",
-          "tagline": "Process Streamlining & Workflow Architecture",
-          "description": "At Nexora Labs, we optimize and streamline complex technical workflows. By combining automation, custom software, and process intelligence, we eliminate operational friction to make engineering seamless and effortless.",
-          "link": "rnd.html",
-          "accent": "#8C6ACC"
+          "title": "Craft is strategy",
+          "desc": "Thoughtful details change how a product is trusted, adopted, and remembered."
         }
       ]
     },
-    "about": {
-      "sectionTitle": "Where Intelligence<br>Meets Architecture",
-      "sectionSubtitle": "Every breakthrough starts with a question. We turn complexity into structured, intelligent systems."
-    },
-    "innovation": {
-      "sectionTitle": "Innovation in Action",
-      "sectionSubtitle": "From concept to reality — explore our latest solutions and ongoing research initiatives.",
-      "solutions": [
-        {
-          "name": "AgroSense",
-          "description": "Empowering farmers with intelligent soil and crop analysis.",
-          "tags": [
-            "Soil Analytics",
-            "pH Detection",
-            "AgriTech AI"
-          ]
-        }
-      ]
-    },
-    "portfolio": {
-      "sectionTitle": "Client Success Stories",
-      "sectionSubtitle": "Transforming businesses through intelligent technology solutions.",
-      "clients": [
-        {
-          "category": "FinTech",
-          "name": "Nexora Financial",
-          "description": "Built AI-powered fraud detection system and complete digital identity for a next-gen fintech startup. Reduced false positives by 40% in pilot phase.",
-          "tags": [
-            "AI Systems",
-            "Brand Identity"
-          ]
-        },
-        {
-          "category": "Healthcare",
-          "name": "MedVault Labs",
-          "description": "Designed secure patient data management platform with automated compliance reporting. Streamlined clinical workflows and reduced admin overhead by 60%.",
-          "tags": [
-            "Data Platform",
-            "Automation"
-          ]
-        },
-        {
-          "category": "Logistics",
-          "name": "SwiftRoute Global",
-          "description": "Developed intelligent route optimisation engine for last-mile delivery. Integrated real-time tracking and predictive analytics to cut delivery times by 35%.",
-          "tags": [
-            "Route AI",
-            "Real-time Analytics"
-          ]
-        },
-        {
-          "category": "EdTech",
-          "name": "Learnova Academy",
-          "description": "Created adaptive learning platform powered by ML that personalises curriculum paths. Achieved 2.5x improvement in student engagement and completion rates.",
-          "tags": [
-            "ML Platform",
-            "Adaptive Learning"
-          ]
-        }
-      ]
-    },
-    "cta": {
-      "label": "LET'S BUILD TOGETHER",
-      "headline": "Have a project<br>in mind?<br><em>Let's talk.</em>",
-      "body": "Tell us about your idea, challenge, or vision. We'll get back to you within 24 hours with a clear plan of action."
-    }
-  },
-  "projex": {
-    "heroTitle": "Projex",
-    "heroLabel": "NEXORA SUITE / DIVISION 01",
-    "heroTagline": "Academic Innovation & Project Support Division",
-    "heroDesc": "Bridging the gap between academia and industry. We empower students and institutions with structured project guidance, hands-on internships, and research mentorship — building the next generation of tech professionals.",
     "services": [
       {
-        "icon": "🎓",
-        "name": "Final Year Project Guidance",
-        "description": "B.Tech, M.Tech, and MCA project support with industry-standard methodologies, documentation, and implementation."
+        "id": "01",
+        "category": "Build",
+        "title": "Web development",
+        "description": "Next.js web applications tailored to business goals, hardened with Core Web Vitals discipline, semantic structure, and strict performance budgets.",
+        "solves": ["Next.js applications", "Core Web Vitals", "Semantic architecture"],
+        "stack": ["Next.js", "React", "TypeScript", "Cloudflare"]
       },
       {
-        "icon": "💼",
-        "name": "Industrial Internship Programs",
-        "description": "Hands-on training in AI, web development, automation, and data science."
+        "id": "02",
+        "category": "Design",
+        "title": "UI/UX design",
+        "description": "Minimal, highly detailed interfaces focused on visual hierarchy, smooth transitions, thoughtful micro-interactions, and premium layouts.",
+        "solves": ["UX architecture", "Interface systems", "Micro-interactions"],
+        "stack": ["Figma", "Framer", "Storybook", "Rive"]
       },
       {
-        "icon": "🔬",
-        "name": "Research Mentorship",
-        "description": "Paper writing support, thesis guidance, conference preparation, and literature review assistance."
+        "id": "03",
+        "category": "Operate",
+        "title": "ERP systems",
+        "description": "Bespoke internal management platforms and enterprise ERPs designed for scale, data safety, complex workflows, and clean domain models.",
+        "solves": ["Internal platforms", "Complex workflows", "Clean domain models"],
+        "stack": ["Next.js", "PostgreSQL", "TypeScript", "AWS"]
       },
       {
-        "icon": "🏗️",
-        "name": "Lab Setup & Infrastructure",
-        "description": "Smart lab installations, IoT setups, computer lab configurations, and educational infrastructure planning."
+        "id": "04",
+        "category": "Automate",
+        "title": "AI integrations",
+        "description": "Intelligent agents, conversational bots, LLMs, and workflow automation built with clear guardrails and audit-friendly logging.",
+        "solves": ["Intelligent agents", "Conversational systems", "Auditable workflows"],
+        "stack": ["OpenAI", "Python", "LangGraph", "Pinecone"]
       },
       {
-        "icon": "📚",
-        "name": "Workshops & Training",
-        "description": "Technical workshops, coding bootcamps, hackathon facilitation, and faculty development programs."
+        "id": "05",
+        "category": "Discover",
+        "title": "SEO optimization",
+        "description": "Technical search positioning, answer-first structures, rich schema markup, and strict Core Web Vitals for stronger organic visibility.",
+        "solves": ["Technical SEO", "Answer-first content", "Schema systems"],
+        "stack": ["Schema.org", "Search Console", "Lighthouse", "Next.js"]
       },
       {
-        "icon": "📋",
-        "name": "Career Guidance & Placement",
-        "description": "Mock interviews, resume building, portfolio development, and placement preparation programs."
+        "id": "06",
+        "category": "Transact",
+        "title": "Booking platforms",
+        "description": "Reliable online booking, reservation desks, calendar integrations, and transactional pipelines tailored to travel and scheduling operations.",
+        "solves": ["Reservation engines", "Calendar integration", "Payment workflows"],
+        "stack": ["Stripe", "PostgreSQL", "React", "Cloudflare"]
+      },
+      {
+        "id": "07",
+        "category": "Observe",
+        "title": "Dashboard systems",
+        "description": "Custom analytics hubs, referral portals, and administrative command centers with clear, decision-ready executive reporting.",
+        "solves": ["Analytics hubs", "Admin command centers", "Executive reporting"],
+        "stack": ["ClickHouse", "PostgreSQL", "Recharts", "Next.js"]
+      },
+      {
+        "id": "08",
+        "category": "Define",
+        "title": "Branding & identity",
+        "description": "Distinctive brand systems, custom typography, palettes, and digital rules that elevate products into premium enterprise experiences.",
+        "solves": ["Brand systems", "Custom typography", "Digital guidelines"],
+        "stack": ["Figma", "Illustrator", "After Effects", "Framer"]
+      },
+      {
+        "id": "09",
+        "category": "Sustain",
+        "title": "Maintenance & support",
+        "description": "Continuous system telemetry, cloud infrastructure updates, prompt tuning, monthly enhancements, and responsive developer availability.",
+        "solves": ["System telemetry", "Cloud updates", "Feature enhancements"],
+        "stack": ["Sentry", "Cloudflare", "AWS", "GitHub Actions"]
+      },
+      {
+        "id": "10",
+        "category": "Grow",
+        "title": "Digital marketing",
+        "description": "Data-driven campaigns spanning paid media, social strategy, and email automation, designed to scale growth predictably.",
+        "solves": ["Paid media", "Social strategy", "Email automation"],
+        "stack": ["GA4", "HubSpot", "Meta Ads", "Google Ads"]
       }
     ],
-    "ctaHeadline": "Ready to build<br /><em>your future?</em>",
-    "ctaDesc": "Whether you're a student seeking project guidance or an institution looking for training partnerships — let's talk."
-  },
-  "nexora": {
-    "heroTitle": "Nexora Digital",
-    "heroLabel": "NEXORA SUITE / DIVISION 02",
-    "heroTagline": "Web Application Engineering",
-    "heroDesc": "Building modern, performant web applications that drive business growth.",
-    "services": [],
-    "ctaHeadline": "Ready to build<br /><em>your vision?</em>",
-    "ctaDesc": "Let's create something exceptional together."
-  },
-  "aetherai": {
-    "heroTitle": "AetherAI",
-    "heroLabel": "NEXORA SUITE / DIVISION 03",
-    "heroTagline": "Artificial Intelligence Systems",
-    "heroDesc": "Designing and deploying intelligent systems that solve real-world problems.",
-    "services": [],
-    "ctaHeadline": "Ready to build<br /><em>intelligence?</em>",
-    "ctaDesc": "From concept to production AI — let's talk."
-  },
-  "automatax": {
-    "heroTitle": "AutomataX",
-    "heroLabel": "NEXORA SUITE / DIVISION 04",
-    "heroTagline": "Automation & Workflow Engineering",
-    "heroDesc": "Streamlining operations through intelligent automation and workflow design.",
-    "services": [],
-    "ctaHeadline": "Ready to<br /><em>automate?</em>",
-    "ctaDesc": "Let's eliminate manual processes together."
-  },
-  "veltrix": {
-    "heroTitle": "Veltrix",
-    "heroLabel": "NEXORA SUITE / DIVISION 05",
-    "heroTagline": "Custom Software & Product Dev",
-    "heroDesc": "End-to-end software development for products that matter.",
-    "services": [],
-    "ctaHeadline": "Ready to build<br /><em>your product?</em>",
-    "ctaDesc": "From MVPs to enterprise systems — let's talk."
-  },
-  "blog": {
-    "title": "System Thinking.",
-    "subtitle": "Writing on AI architecture, structured intelligence, and the engineering of complex systems.",
-    "posts": [
+    "portfolio": [
       {
-        "id": 1,
-        "title": "The Myth of the Minimal Viable Architecture",
-        "category": "architecture",
-        "date": "FEB 2026",
-        "readTime": "12 min read",
-        "excerpt": "There is a belief that architecture can be deferred. This is not a strategy. It is an assumption.",
-        "featured": true
+        "id": "01",
+        "category": "Engineering Operations",
+        "year": "2026",
+        "name": "SASEC Engineering Dashboard",
+        "description": "A workforce, attendance, payroll, and field-operations platform.",
+        "details": "An internal operations dashboard that brings workforce tracking, approvals, attendance, payroll, teams, vehicles, and reporting into one interface for JSW operations.",
+        "tags": ["ERP systems", "Dashboard systems", "Web development"],
+        "quote": "We had no real-time visibility into who was on site or what we were owed. We brought LaunchLume in to fix that. Billing that used to take days now takes minutes — that's the difference in how fast we get paid by JSW.",
+        "clientName": "Chandra Sekhar",
+        "clientRole": "Director, SASEC Engineering"
       },
       {
-        "id": 2,
-        "title": "Failure Modes Are Features, Not Exceptions",
-        "category": "systems",
-        "date": "JAN 2026",
-        "readTime": "8 min",
-        "excerpt": "Defensive architecture starts by mapping everything that can fail."
+        "id": "02",
+        "category": "Architecture & Interiors",
+        "year": "2026",
+        "name": "4 Folds Design Studio",
+        "description": "An immersive architectural portfolio built around spaces that breathe.",
+        "details": "A visual-first studio website that presents architectural philosophy, services, and selected work through an atmospheric digital experience.",
+        "tags": ["Web development", "UI/UX design", "Portfolio experience"],
+        "quote": "People found us through word of mouth for years — the work spoke for itself, but online we didn't exist. LaunchLume gave us a website that finally matches what we actually do. Now new clients see the quality before they even walk in.",
+        "clientName": "Harshini",
+        "clientRole": "4 Folds Design Studio"
       },
       {
-        "id": 3,
-        "title": "Latency Is Not a Metric. It Is a Product Decision.",
-        "category": "inference",
-        "date": "JAN 2026",
-        "readTime": "6 min",
-        "excerpt": "When a team optimises for inference speed without a latency budget, they are optimising in the wrong direction."
+        "id": "03",
+        "category": "Food & Beverage",
+        "year": "2026",
+        "name": "Yeskimós Ice Cream",
+        "description": "A consumer and franchise website for a Hyderabad ice cream brand.",
+        "details": "A brand-led digital storefront for discovering products, understanding the YESKIMOS story, finding the Hyderabad parlour, and exploring franchise opportunities.",
+        "tags": ["Web development", "Branding & identity", "Digital marketing"],
+        "quote": "We wanted people to feel the brand before they even walked into the parlour. LaunchLume gave us a site that does that — the menu, our story, where to find us, and how to franchise with us, all in one place that actually looks like YESKIMOS.",
+        "clientName": "Venkata Rao",
+        "clientRole": "YESKIMOS"
       },
       {
-        "id": 4,
-        "title": "Why Microservices Break at the Intelligence Layer",
-        "category": "architecture",
-        "date": "DEC 2025",
-        "readTime": "10 min",
-        "excerpt": "Standard microservice principles hold well for stateless compute. They do not hold for stateful inference contexts."
-      },
-      {
-        "id": 5,
-        "title": "The Architecture Dossier: What We Ship Before We Build",
-        "category": "process",
-        "date": "NOV 2025",
-        "readTime": "7 min",
-        "excerpt": "Before any Nexora project enters development, we produce one document."
+        "id": "04",
+        "category": "Education & Institutions",
+        "year": "2026",
+        "name": "Master Guidance Institute",
+        "description": "A clean, professional academic portal and institutional website.",
+        "details": "End-to-end web portal providing program information, admissions guidance, and student advisories.",
+        "tags": ["Web development", "UI/UX design", "Portal Systems"],
+        "quote": "It was a pleasure working with you. You delivered a clean, professional website and were responsive to our feedback throughout the project. Thank you for the great work—I’d happily recommend your services.",
+        "clientName": "Shubhangi Pant",
+        "clientRole": "Master Guidance Institute"
       }
-    ]
-  },
-  "rnd": {
-    "title": "Innovation in Action",
-    "subtitle": "From concept to reality — explore our completed solutions, active research, and upcoming projects.",
-    "projects": [
+    ],
+    "process": [
       {
-        "id": 1,
-        "title": "AgroSense",
-        "status": "completed",
-        "date": "Launched 2025",
-        "description": "Empowering farmers with intelligent soil and crop analysis.",
-        "tags": [
-          "Soil Analytics",
-          "pH Detection",
-          "AgriTech AI"
-        ],
-        "progress": 100
+        "step": "01",
+        "name": "Frame",
+        "headline": "Find the leverage",
+        "description": "We align the business case, user truth, and technical reality before committing to a build.",
+        "outcome": "Product brief"
       },
       {
-        "id": 2,
-        "title": "TrustScore™ by Bevorse",
-        "status": "active",
-        "date": "Started Jan 2026",
-        "description": "A business credibility scoring system that rates businesses based on their digital presence.",
-        "tags": [
-          "Business Intelligence",
-          "Credibility Scoring",
-          "Review Automation"
-        ],
-        "progress": 65
+        "step": "02",
+        "name": "Shape",
+        "headline": "Make it tangible",
+        "description": "Rapid prototypes turn assumptions into something teams can test, debate, and improve.",
+        "outcome": "Tested direction"
       },
       {
-        "id": 3,
-        "title": "Virtual Ad Placement for Short-Form Content",
-        "status": "active",
-        "date": "Started Nov 2025",
-        "description": "Developing distribution network technology that seamlessly integrates brand messages into short-form content.",
-        "tags": [
-          "Ad Tech",
-          "Computer Vision",
-          "Content AI"
-        ],
-        "progress": 40
+        "step": "03",
+        "name": "Build",
+        "headline": "Ship the core",
+        "description": "A senior, integrated squad moves from design system to dependable production software.",
+        "outcome": "Live product"
       },
       {
-        "id": 4,
-        "title": "Quick Fashion Logistics",
-        "status": "active",
-        "date": "Started Feb 2026",
-        "description": "Innovation in fashion industry logistics for rapid fulfilment and supply chain optimisation.",
-        "tags": [
-          "Supply Chain",
-          "Logistics AI",
-          "Optimisation"
-        ],
-        "progress": 20
-      },
-      {
-        "id": 5,
-        "title": "Butler — Super Intelligent Digital Partner",
-        "status": "planning",
-        "date": "Starting Q3 2026",
-        "description": "Developing a next-generation AI assistant that acts as a comprehensive digital partner.",
-        "tags": [
-          "AI Assistant",
-          "NLP",
-          "Business Automation"
-        ],
-        "progress": 0
+        "step": "04",
+        "name": "Scale",
+        "headline": "Compound the value",
+        "description": "We measure adoption, transfer capability, and keep improving the parts that drive growth.",
+        "outcome": "Growth system"
       }
-    ]
+    ],
+    "faq": [
+      {
+        "q": "What makes your development process different?",
+        "a": "We work in short, transparent milestones with regular demos and updates, so you’re never left wondering about progress. You’ll always know what’s being built, what’s coming next, and have opportunities to provide feedback throughout the project."
+      },
+      {
+        "q": "How quickly can we start?",
+        "a": "Most engagements begin within two to four days. A focused Shape sprint is often the fastest way to align scope, team, and technical direction before a larger build."
+      },
+      {
+        "q": "Do you work with existing product teams?",
+        "a": "Yes. We frequently embed with internal teams, take ownership of a workstream, or provide a complete senior squad. The operating model is shaped around your capability gaps."
+      },
+      {
+        "q": "How much does a typical project cost?",
+        "a": "Every project is different, so we don’t use fixed pricing. After a discovery call, we’ll provide a detailed proposal with scope, timeline, milestones, and pricing—so you know exactly what you’re paying for. No hidden costs or surprise invoices."
+      },
+      {
+        "q": "Can you support the product after launch?",
+        "a": "Yes. We offer focused optimization periods and longer-term product pods for teams that want continuity through adoption and scale."
+      }
+    ],
+    "cta": {
+      "label": "TELL US WHAT YOU'RE BUILDING",
+      "headline": "Good software changes<br><em>the trajectory.</em>",
+      "body": "Share the opportunity, the obstacle, and the outcome you want. A senior product lead will review it personally."
+    }
   },
   "settings": {
     "footer": {
-      "description": "We architect intelligent systems that bring order to complexity. Infrastructure-level AI for organisations that operate at scale.",
-      "email": "contact@nexora.canonix.in"
+      "description": "Build · Launch · Scale. Independent product studio based in Hyderabad, Telangana, India. Strategy, design, and engineering at one table.",
+      "email": "contact@launchlume.in",
+      "location": "Hyderabad, Telangana, India",
+      "availability": "Accepting Q4 projects"
     },
     "social": {
-      "linkedin": "https://linkedin.com/company/nexora",
-      "twitter": "https://twitter.com/nexora_ai",
-      "instagram": "https://instagram.com/nexora.nexora.in",
-      "reddit": "https://reddit.com/r/nexora"
+      "linkedin": "https://linkedin.com/company/launchlume",
+      "instagram": "https://instagram.com/launchlume",
+      "behance": "https://behance.net/launchlume"
     },
     "meta": {
-      "siteTitle": "Nexora — We Architect Intelligence",
-      "siteDescription": "Nexora builds intelligent systems that bring order to complexity. Infrastructure-level AI for organisations that operate at scale.",
-      "ogImage": "https://nexora.nexora.in/images/og-image.png"
+      "siteTitle": "LaunchLume — Product studio for ambitious software",
+      "siteDescription": "Strategy, design, and engineering for category-defining digital products. Built in Hyderabad, India.",
+      "ogImage": "https://launchlume.in/og.png"
     }
   }
 }

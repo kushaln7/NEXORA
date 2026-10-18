@@ -100,6 +100,12 @@ app.get('/api/content', requireAuth, (req, res) => {
   catch (e) { res.status(500).json({ error: 'Failed to read content' }); }
 });
 
+app.get('/api/content-public', (req, res) => {
+  try { res.json(JSON.parse(fs.readFileSync(CONTENT_FILE, 'utf8'))); }
+  catch (e) { res.status(500).json({ error: 'Failed to read content' }); }
+});
+
+
 app.put('/api/content/:section', requireAuth, (req, res) => {
   try {
     const content = JSON.parse(fs.readFileSync(CONTENT_FILE, 'utf8'));
@@ -426,12 +432,26 @@ function buildInitialContent() {
 }
 
 // ─── Start ──────────────────────────────────────────
-app.listen(PORT, () => {
-  console.log('');
-  console.log('  \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501');
-  console.log('   NEXORA Server');
-  console.log('   Site:  http://localhost:' + PORT);
-  console.log('   Admin: http://localhost:' + PORT + '/admin');
-  console.log('  \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501');
-  console.log('');
-});
+function startServer(port) {
+  const currentPort = Number(port) || 3000;
+  const srv = app.listen(currentPort, () => {
+    console.log('');
+    console.log('  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━');
+    console.log('   NEXORA Server');
+    console.log('   Site:  http://localhost:' + currentPort);
+    console.log('   Admin: http://localhost:' + currentPort + '/admin');
+    console.log('  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━');
+    console.log('');
+  });
+
+  srv.on('error', (err) => {
+    if (err.code === 'EADDRINUSE') {
+      console.warn(`\n  [Notice: Port ${currentPort} is currently occupied, attempting port ${currentPort + 1}...]`);
+      startServer(currentPort + 1);
+    } else {
+      console.error('Server error:', err);
+    }
+  });
+}
+
+startServer(PORT);

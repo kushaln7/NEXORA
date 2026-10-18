@@ -80,8 +80,159 @@
   function dismissHeroLoader() {
     if (heroLoader) heroLoader.classList.add('hidden');
   }
-  // Dismiss after Three.js scene starts or after a timeout fallback
-  setTimeout(dismissHeroLoader, 3000);
+  // Dismiss immediately if user already experienced the loader in this session or returned via back-nav
+  try {
+    if (sessionStorage.getItem('nexora_preloader_seen') === 'true' || document.documentElement.classList.contains('preload-bypassed')) {
+      dismissHeroLoader();
+    }
+  } catch (e) {}
+
+  // Universal safety timeout: Dismiss loader after 2.8s under any circumstance
+  setTimeout(dismissHeroLoader, 2800);
+
+  // Restore on back/forward cache
+  window.addEventListener('pageshow', () => {
+    dismissHeroLoader();
+  });
+
+  /* ═══════════════════════════════════════════════
+     1e. LAUNCHLUME MULTI-COLUMN REDIRECT CURTAIN & SCROLL LASER HUD
+  ═══════════════════════════════════════════════ */
+  (function initGlobalTransitions() {
+    if (window.__globalTransitionsInit) return;
+    window.__globalTransitionsInit = true;
+
+    // 1. Scroll Laser Progress Indicator
+    let progressBar = document.getElementById('scroll-progress-bar');
+    if (!progressBar) {
+      progressBar = document.createElement('div');
+      progressBar.id = 'scroll-progress-bar';
+      progressBar.className = 'scroll-progress-bar';
+      progressBar.setAttribute('aria-hidden', 'true');
+      document.body.prepend(progressBar);
+    }
+
+    function updateLaser() {
+      const max = document.documentElement.scrollHeight - window.innerHeight;
+      const pct = max > 0 ? Math.min(100, Math.max(0, (window.scrollY / max) * 100)) : 0;
+      progressBar.style.width = `${pct.toFixed(1)}%`;
+    }
+    window.addEventListener('scroll', updateLaser, { passive: true });
+    updateLaser();
+
+    // 2. LaunchLume Multi-Column Quantum Redirect Curtain
+    let curtain = document.getElementById('quantum-redirect-curtain');
+    if (!curtain) {
+      curtain = document.createElement('div');
+      curtain.id = 'quantum-redirect-curtain';
+      curtain.className = 'quantum-redirect-curtain';
+      curtain.setAttribute('aria-hidden', 'true');
+      curtain.innerHTML = `
+        <div class="q-curtain-columns" aria-hidden="true">
+          <span class="q-curtain-col"></span>
+          <span class="q-curtain-col"></span>
+          <span class="q-curtain-col"></span>
+          <span class="q-curtain-col"></span>
+          <span class="q-curtain-col"></span>
+        </div>
+        <div class="q-curtain-beam"></div>
+        <div class="q-curtain-content">
+          <div class="q-curtain-logo">
+            <svg viewBox="0 0 24 24" width="34" height="34" fill="none" stroke="currentColor" stroke-width="1.8">
+              <circle cx="12" cy="12" r="10" stroke="#0052cc"></circle>
+              <ellipse cx="12" cy="12" rx="10" ry="4.2" stroke="#4d9aff" transform="rotate(25 12 12)"></ellipse>
+              <circle cx="12" cy="12" r="2.5" fill="#4d9aff"></circle>
+            </svg>
+          </div>
+          <div class="mono q-curtain-title">NEXORA // ROUTING TELEMETRY</div>
+          <div class="q-curtain-progress-track">
+            <div class="q-curtain-progress-fill"></div>
+          </div>
+          <div class="mono q-curtain-dest" id="q-curtain-dest">INITIALIZING ORBITAL LINK</div>
+        </div>
+      `;
+      document.body.prepend(curtain);
+    } else if (!curtain.querySelector('.q-curtain-columns')) {
+      const cols = document.createElement('div');
+      cols.className = 'q-curtain-columns';
+      cols.setAttribute('aria-hidden', 'true');
+      cols.innerHTML = `
+        <span class="q-curtain-col"></span>
+        <span class="q-curtain-col"></span>
+        <span class="q-curtain-col"></span>
+        <span class="q-curtain-col"></span>
+        <span class="q-curtain-col"></span>
+      `;
+      curtain.prepend(cols);
+    }
+
+    const destLabelEl = document.getElementById('q-curtain-dest');
+
+    function hideCurtain() {
+      if (!curtain) return;
+      document.body.classList.remove('page-redirecting');
+      curtain.classList.add('curtain-exit');
+      setTimeout(() => {
+        curtain.classList.remove('active', 'curtain-exit');
+      }, 700);
+    }
+
+    // On page arrival / restoration, perform theatrical curtain exit
+    window.addEventListener('pageshow', hideCurtain);
+    window.addEventListener('popstate', hideCurtain);
+
+    // Initial load theatric reveal if navigating between pages
+    if (sessionStorage.getItem('nexora_nav_redirect') === 'true') {
+      sessionStorage.removeItem('nexora_nav_redirect');
+      curtain.classList.add('active', 'curtain-exit');
+      setTimeout(() => {
+        curtain.classList.remove('active', 'curtain-exit');
+      }, 750);
+    }
+
+    // Format human-friendly route names
+    function getRouteName(urlStr) {
+      try {
+        const clean = urlStr.split('?')[0].split('#')[0];
+        const file = clean.substring(clean.lastIndexOf('/') + 1) || 'home';
+        const name = file.replace('.html', '').replace(/-/g, ' ').toUpperCase();
+        return name === 'INDEX' || name === '' ? 'ORBITAL HOME' : name;
+      } catch (e) {
+        return 'ORBITAL TELEMETRY';
+      }
+    }
+
+    document.querySelectorAll('a[href]').forEach((link) => {
+      const href = link.getAttribute('href');
+      if (!href || href.startsWith('#') || href.startsWith('mailto:') || href.startsWith('tel:') || link.target === '_blank') return;
+      if (href.startsWith('http') && !href.includes(window.location.hostname)) return;
+
+      link.addEventListener('click', (e) => {
+        if (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
+        e.preventDefault();
+
+        const routeName = getRouteName(href);
+        if (destLabelEl) {
+          destLabelEl.textContent = `ROUTING TO ${routeName} // SYNCED`;
+        }
+
+        document.body.classList.add('page-redirecting');
+        curtain.classList.remove('curtain-exit');
+        curtain.classList.add('active');
+
+        try {
+          sessionStorage.setItem('nexora_nav_redirect', 'true');
+        } catch (err) {}
+
+        // Safety timeout in case page fails to unload
+        setTimeout(hideCurtain, 1200);
+
+        setTimeout(() => {
+          window.location.href = href;
+        }, 280);
+      });
+    });
+  })();
 
   /* ═══════════════════════════════════════════════
      2. THREE.JS PHOENIX CANVAS
@@ -89,7 +240,9 @@
   (function initThreeScene() {
     const canvas = document.getElementById('phoenix-canvas');
     if (!canvas || typeof THREE === 'undefined') {
-      dismissHeroLoader();
+      if (!document.getElementById('earth-canvas')) {
+        dismissHeroLoader();
+      }
       return;
     }
 
@@ -418,7 +571,7 @@
      Must work even if CDN fails.
   ═══════════════════════════════════════════════ */
   (function initRevealObservers() {
-    // ── Reveal up ───────────────────────────────
+    // ── Reveal up (LaunchLume style: viewport margin -50px, smooth cubic-bezier) ──
     const revealObserver = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
@@ -429,12 +582,12 @@
           revealObserver.unobserve(entry.target);
         }
       });
-    }, { threshold: 0.05, rootMargin: '0px 0px -20px 0px' });
+    }, { threshold: 0.08, rootMargin: '0px 0px -50px 0px' });
 
     document.querySelectorAll('.reveal-up').forEach((el) => {
       const siblings = Array.from(el.parentElement.querySelectorAll('.reveal-up'));
       const sibIdx = siblings.indexOf(el);
-      el.dataset.delay = sibIdx * 0.12;
+      el.dataset.delay = ((sibIdx % 4) * 0.10).toFixed(2);
       revealObserver.observe(el);
     });
 
@@ -655,4 +808,42 @@
     mq.addEventListener('change', e => { if (e.matches) setup(); });
   })();
 
+  /* ═══════════════════════════════════════════════
+     9. LAUNCHLUME SHOWCASE VIDEOS AUTOPLAY OBSERVER
+  ═══════════════════════════════════════════════ */
+  (function () {
+    const videos = document.querySelectorAll('.lume-case-video');
+    if (!videos.length) return;
+
+    if ('IntersectionObserver' in window) {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          const video = entry.target;
+          if (entry.isIntersecting && entry.intersectionRatio >= 0.2) {
+            const playPromise = video.play();
+            if (playPromise !== undefined) {
+              playPromise.catch(() => {});
+            }
+          } else {
+            video.pause();
+          }
+        });
+      }, { threshold: [0, 0.2, 0.5] });
+
+      videos.forEach(v => observer.observe(v));
+
+      document.addEventListener('visibilitychange', () => {
+        if (document.hidden) {
+          videos.forEach(v => v.pause());
+        }
+      });
+    } else {
+      videos.forEach(v => {
+        const p = v.play();
+        if (p !== undefined) p.catch(() => {});
+      });
+    }
+  })();
+
 })();
+

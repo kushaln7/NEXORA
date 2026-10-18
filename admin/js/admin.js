@@ -28,7 +28,7 @@
     // Auth check
     const auth = await api('GET', '/api/auth/check');
     if (!auth.authenticated) {
-      window.location.href = '/admin/login.html';
+      window.location.replace('/admin/login.html');
       return;
     }
 
@@ -52,7 +52,7 @@
     // Logout
     $('#logout-btn').addEventListener('click', async () => {
       await api('POST', '/api/auth/logout');
-      window.location.href = '/admin/login.html';
+      window.location.replace('/admin/login.html');
     });
 
     // Event delegation for quick cards and nav links in main content

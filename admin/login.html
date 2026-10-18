@@ -138,7 +138,7 @@
 <body>
   <div class="login-card">
     <div class="login-logo">
-      <span class="logo-text"><span class="c">C</span>ANONIX</span>
+      <span class="logo-text"><span class="c">N</span>EXORA</span>
       <span class="admin-badge">Admin</span>
     </div>
     <form id="login-form">
@@ -153,13 +153,16 @@
       <button type="submit" class="login-btn" id="login-btn">Sign In</button>
       <div class="error-msg" id="error"></div>
     </form>
-    <div class="login-footer">Nexora Admin Panel &middot; Secure Access</div>
+    <div class="login-footer">
+      <a href="../index.html" style="color: #0052cc; text-decoration: none; display: inline-block; margin-bottom: 12px; font-weight: 500; font-size: 12px;">&larr; Return to Nexora Home</a><br>
+      Nexora Admin Panel &middot; Secure Access
+    </div>
   </div>
   <script>
     (function() {
       // If already authenticated, redirect to dashboard
       fetch('/api/auth/check').then(r => r.json()).then(d => {
-        if (d.authenticated) window.location.href = '/admin/';
+        if (d.authenticated) window.location.replace('/admin/');
       });
 
       document.getElementById('login-form').addEventListener('submit', async function(e) {
@@ -181,7 +184,7 @@
           });
           const data = await res.json();
           if (data.success) {
-            window.location.href = '/admin/';
+            window.location.replace('/admin/');
           } else {
             err.textContent = data.error || 'Invalid credentials';
             btn.disabled = false;

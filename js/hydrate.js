@@ -144,14 +144,18 @@
       }
     }
 
-    // Portfolio — full regeneration so add/delete work
+    // Portfolio — support LaunchLume rich case studies
     var port = d.portfolio || {};
-    setText('#evidence .section-title-center', port.sectionTitle);
-    setText('#evidence .section-subtitle-center', port.sectionSubtitle);
+    var clients = Array.isArray(port) ? port : (port.clients || []);
+    if (port.sectionTitle) setText('#evidence .section-title-center', port.sectionTitle);
+    if (port.sectionSubtitle) setText('#evidence .section-subtitle-center', port.sectionSubtitle);
     var portfolioSection = document.getElementById('evidence');
-    if (port.clients && port.clients.length > 0) {
+    if (portfolioSection) portfolioSection.style.display = '';
+
+    var lumeGrid = qs('.lume-portfolio-grid', portfolioSection);
+    if (!lumeGrid && clients.length > 0) {
       var thumbCls = ['portfolio-thumb','portfolio-thumb-alt','portfolio-thumb-dark','portfolio-thumb-accent'];
-      var gridHTML = port.clients.map(function (c, i) {
+      var gridHTML = clients.map(function (c, i) {
         var tagsHTML = (c.tags || []).map(function (t) {
           return '<span class="portfolio-tag mono">' + esc(t) + '</span>';
         }).join('');
@@ -165,35 +169,9 @@
           + '<div class="portfolio-tags">' + tagsHTML + '</div>'
           + '</div></div>';
       }).join('');
-      // If mobile carousel was already set up, update it too
-      var carouselTrack = portfolioSection ? portfolioSection.querySelector('.portfolio-carousel-track') : null;
-      var carouselOuter = portfolioSection ? portfolioSection.querySelector('.portfolio-carousel-outer') : null;
-      var carouselDots  = portfolioSection ? portfolioSection.querySelector('.portfolio-carousel-dots') : null;
-      if (carouselTrack) {
-        // Remove old carousel, let grid show on all viewports
-        if (carouselOuter) carouselOuter.remove();
-        if (carouselDots) carouselDots.remove();
-        var grid = qs('.portfolio-grid', portfolioSection);
-        if (grid) grid.style.display = '';
-      }
       setHTML('.portfolio-grid', gridHTML);
-      if (portfolioSection) portfolioSection.style.display = '';
-      // Re-observe new reveal-up elements so they animate in
-      if (window.__observeReveal) {
-        (portfolioSection || document).querySelectorAll('.reveal-up').forEach(function (el) {
-          if (!el.classList.contains('visible')) window.__observeReveal(el);
-        });
-      }
-    } else {
-      // No clients — hide the entire section + carousel remnants so there's no gap
-      if (portfolioSection) {
-        portfolioSection.style.display = 'none';
-        var co = portfolioSection.querySelector('.portfolio-carousel-outer');
-        var cd = portfolioSection.querySelector('.portfolio-carousel-dots');
-        if (co) co.remove();
-        if (cd) cd.remove();
-      }
     }
+
 
     // CTA
     var cta = d.cta || {};

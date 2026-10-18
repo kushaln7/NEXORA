@@ -4,39 +4,44 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Nexora &mdash; Custom Websites for US, UK &amp; AU Businesses</title>
-  <meta name="description" content="Nexora builds custom websites with SEO, SSL, and payment integration — delivered in 2–3 weeks. Trusted by businesses across the US, UK and Australia.">
+  <title>LaunchLume — Product studio for ambitious software</title>
+  <meta name="description" content="We build software that holds up, ships fast, feels right, lasts. Strategy, design, and engineering from one senior team in Hyderabad, India. Delivered in 2–4 weeks.">
   <meta name="theme-color" content="#0052cc">
-  <link rel="canonical" href="https://nexora.nexora.in/">
+  <link rel="canonical" href="https://launchlume.in/">
   <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
-  <link rel="icon" href="images/favicon.png" type="image/png" sizes="32x32">
   <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
   <!-- Open Graph -->
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Nexora &mdash; We Architect Intelligence">
-  <meta property="og:description" content="Nexora builds intelligent systems that bring order to complexity. Infrastructure-level AI for organisations that operate at scale.">
-  <meta property="og:image" content="https://nexora.nexora.in/images/og-image.png">
-  <meta property="og:url" content="https://nexora.nexora.in/">
-  <meta property="og:site_name" content="Nexora">
+  <meta property="og:title" content="LaunchLume — Product studio for ambitious software">
+  <meta property="og:description" content="We build software that holds up, ships fast, feels right, lasts. Strategy, design, and engineering from one senior team in Hyderabad, India.">
+  <meta property="og:image" content="https://launchlume.in/og.png">
+  <meta property="og:url" content="https://launchlume.in/">
+  <meta property="og:site_name" content="LaunchLume">
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Nexora &mdash; We Architect Intelligence">
-  <meta name="twitter:description" content="Nexora builds intelligent systems that bring order to complexity.">
-  <meta name="twitter:image" content="https://nexora.nexora.in/images/og-image.png">
+  <meta name="twitter:title" content="LaunchLume — Product studio for ambitious software">
+  <meta name="twitter:description" content="We build software that holds up, ships fast, feels right, lasts.">
+  <meta name="twitter:image" content="https://launchlume.in/og.png">
   <!-- Structured Data -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "Organization",
-    "name": "Nexora",
-    "url": "https://nexora.nexora.in",
-    "logo": "https://nexora.nexora.in/images/favicon.svg",
-    "description": "Nexora builds intelligent systems that bring order to complexity. Infrastructure-level AI for organisations that operate at scale.",
-    "foundingDate": "2024",
+    "name": "LaunchLume",
+    "url": "https://launchlume.in",
+    "logo": "https://launchlume.in/images/favicon.svg",
+    "description": "Product studio for ambitious software. Strategy, design, and engineering from one senior team in Hyderabad, India.",
+    "foundingDate": "2026",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Hyderabad",
+      "addressRegion": "Telangana",
+      "addressCountry": "IN"
+    },
     "sameAs": [
-      "https://linkedin.com/company/nexora",
-      "https://twitter.com/nexora_ai",
-      "https://github.com/nexora"
+      "https://linkedin.com/company/launchlume",
+      "https://instagram.com/launchlume",
+      "https://behance.net/launchlume"
     ]
   }
   </script>
@@ -45,11 +50,55 @@
   <link rel="preconnect" href="https://cdnjs.cloudflare.com">
   <link rel="preload" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700;800&family=JetBrains+Mono:wght@400;500&family=Inter:wght@300;400;500&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
   <noscript><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700;800&family=JetBrains+Mono:wght@400;500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet"></noscript>
-  <link rel="stylesheet" href="css/styles.css?v=13">
-  <link rel="stylesheet" href="css/redesign.css?v=2">
+  <link rel="stylesheet" href="css/styles.css?v=14">
+  <link rel="stylesheet" href="css/redesign.css?v=4">
+  <script>
+    // Immediate Back-Navigation & Session Bypass:
+    // If returning via Back/Forward or visited earlier in this session,
+    // prevent the full-screen preloader from overlaying and stalling the page where user left off.
+    (function () {
+      try {
+        var isBackNav = (window.performance && window.performance.getEntriesByType && window.performance.getEntriesByType('navigation')[0] && window.performance.getEntriesByType('navigation')[0].type === 'back_forward') ||
+                        (window.performance && window.performance.navigation && window.performance.navigation.type === 2);
+        var seen = sessionStorage.getItem('nexora_preloader_seen') === 'true';
+        if (isBackNav || seen) {
+          document.documentElement.classList.add('preload-bypassed');
+        }
+      } catch (e) {}
+    })();
+  </script>
 </head>
 
 <body class="home">
+
+  <!-- Top Cyber Laser Scroll Progress Indicator -->
+  <div id="scroll-progress-bar" class="scroll-progress-bar" aria-hidden="true"></div>
+
+  <!-- Quantum Redirecting Transition Curtain (LaunchLume Multi-Column Slats) -->
+  <div id="quantum-redirect-curtain" class="quantum-redirect-curtain" aria-hidden="true">
+    <div class="q-curtain-columns" aria-hidden="true">
+      <span class="q-curtain-col"></span>
+      <span class="q-curtain-col"></span>
+      <span class="q-curtain-col"></span>
+      <span class="q-curtain-col"></span>
+      <span class="q-curtain-col"></span>
+    </div>
+    <div class="q-curtain-beam"></div>
+    <div class="q-curtain-content">
+      <div class="q-curtain-logo">
+        <svg viewBox="0 0 24 24" width="34" height="34" fill="none" stroke="currentColor" stroke-width="1.8">
+          <circle cx="12" cy="12" r="10" stroke="#0052cc"></circle>
+          <ellipse cx="12" cy="12" rx="10" ry="4.2" stroke="#4d9aff" transform="rotate(25 12 12)"></ellipse>
+          <circle cx="12" cy="12" r="2.5" fill="#4d9aff"></circle>
+        </svg>
+      </div>
+      <div class="mono q-curtain-title">ORBITAL TELEMETRY</div>
+      <div class="q-curtain-progress-track">
+        <div class="q-curtain-progress-fill"></div>
+      </div>
+      <div class="mono q-curtain-dest" id="q-curtain-dest">INITIALIZING ORBITAL LINK</div>
+    </div>
+  </div>
 
   <!-- Skip to content -->
   <a href="#main-content" class="skip-link">Skip to content</a>
@@ -63,9 +112,11 @@
       <div class="nav-links">
         <a href="#about" class="nav-link">About</a>
         <a href="#services" class="nav-link">Services</a>
-        <a href="packages.html" class="nav-link">Packages</a>
+        <a href="#evidence" class="nav-link">Work</a>
+        <a href="#process" class="nav-link">Process</a>
+        <a href="#faq" class="nav-link">FAQ</a>
       </div>
-      <a href="#cta" class="nav-cta" id="nav-cta">Initiate &rarr;</a>
+      <a href="#cta" class="nav-cta" id="nav-cta">Start a Project &rarr;</a>
       <button class="nav-hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
         <span></span><span></span>
       </button>
@@ -73,8 +124,10 @@
     <div class="nav-mobile-menu" id="mobile-menu">
       <a href="#about">About</a>
       <a href="#services">Services</a>
-      <a href="packages.html">Packages</a>
-      <a href="#cta" class="mobile-cta">Initiate &rarr;</a>
+      <a href="#evidence">Work</a>
+      <a href="#process">Process</a>
+      <a href="#faq">FAQ</a>
+      <a href="#cta" class="mobile-cta">Start a Project &rarr;</a>
     </div>
   </nav>
 
@@ -82,43 +135,189 @@
   <!-- &#9553;  HERO                                 &#9553; -->
   <!-- &#9562;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9565; -->
   <main id="main-content">
+  <div id="hero-scroll-track" class="hero-scroll-track">
   <section id="hero" class="hero earth-hero">
-    <div class="hero-loader" id="hero-loader">
-      <div class="hero-loader-spinner"></div>
-      <span class="mono hero-loader-text">INITIALISING</span>
+    <div class="hero-loader" id="hero-loader" role="status" aria-live="polite">
+      <div class="hero-loader-backdrop"></div>
+      <!-- LaunchLume Multi-Column Vertical Curtain Slats -->
+      <div class="hero-loader-curtain" aria-hidden="true">
+        <span class="hl-curtain-col"></span>
+        <span class="hl-curtain-col"></span>
+        <span class="hl-curtain-col"></span>
+        <span class="hl-curtain-col"></span>
+        <span class="hl-curtain-col"></span>
+      </div>
+      <div class="hero-loader-core">
+        <div class="orbital-rings-container">
+          <div class="orbital-ring ring-outer"></div>
+          <div class="orbital-ring ring-middle"></div>
+          <div class="orbital-ring ring-inner"></div>
+          <div class="orbital-center-icon">
+            <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"></circle>
+              <ellipse cx="12" cy="12" rx="10" ry="4.2" transform="rotate(25 12 12)"></ellipse>
+              <ellipse cx="12" cy="12" rx="4.2" ry="10" transform="rotate(25 12 12)"></ellipse>
+              <circle cx="12" cy="12" r="2" fill="#4d9aff"></circle>
+            </svg>
+          </div>
+        </div>
+        <div class="hero-loader-meta">
+          <div class="hero-loader-brand mono lume-text-shine">PRODUCT STUDIO // HYDERABAD, IN</div>
+          <div class="hero-loader-progress-wrap">
+            <div class="hero-loader-progress-bar" id="hero-loader-bar"></div>
+          </div>
+          <div class="hero-loader-status-row">
+            <span class="mono hero-loader-text" id="hero-loader-status">INITIALISING ORBITAL TELEMETRY</span>
+            <span class="mono hero-loader-pct" id="hero-loader-pct">0%</span>
+          </div>
+        </div>
+      </div>
     </div>
     <!-- Earth canvas: full-bleed, behind everything -->
     <div class="earth-hero-visual" id="earth-visual">
-      <!-- Natural Celestial Sun in space -->
-      <div class="space-sun-flare" aria-hidden="true">
-        <div class="sun-flare-glow"></div>
-        <div class="sun-flare-core"></div>
-      </div>
       <canvas id="earth-canvas" aria-hidden="true"></canvas>
       <img src="images/earth-fallback.webp" alt="Illustration of Earth from space" class="earth-fallback-img" id="earth-fallback" width="900" height="900" loading="eager">
     </div>
     <!-- Hero content overlay -->
     <div class="earth-hero-inner">
-      <div class="earth-hero-text">
-        <span class="hero-label mono" data-reveal-child>NEXORA &mdash; DIGITAL SYSTEMS / EST. 2024</span>
+      <!-- Stage 0: Initial Hero View -->
+      <div class="earth-hero-text" id="hero-stage-0">
         <h1 class="hero-headline" id="hero-headline">
-          <span class="hl-line" id="hl1" data-reveal-child>We Architect</span>
-          <span class="hl-line hl-accent" id="hl2" data-reveal-child>Intelligence.</span>
+          <span class="hl-line" id="hl1" data-reveal-child>We Build Software</span>
+          <span class="hl-line hl-accent" id="hl2" data-reveal-child>That Holds Up.</span>
         </h1>
         <div class="hero-rule" data-reveal-child></div>
-        <p class="hero-sub" id="hero-sub" data-reveal-child>Systems before scale. Structure before speed. We build the infrastructure global businesses run on &mdash; delivered in 2&ndash;3 weeks.</p>
+        <p class="hero-sub" id="hero-sub" data-reveal-child>Strategy, design, and engineering from one senior team in Hyderabad. We build software that holds up, ships fast, feels right, lasts &mdash; delivered in 2&ndash;4 weeks.</p>
         <div class="earth-hero-actions" data-reveal-child>
           <a href="#cta" class="cta-btn" data-magnetic>Start a Project &rarr;</a>
           <a href="#evidence" class="cta-btn-ghost" data-magnetic>View our work</a>
         </div>
       </div>
+
+      <!-- 3-Part Cinematic Story Stages (Scrubbed on Scroll) -->
+      <div class="earth-hero-stages" id="hero-story-stages" aria-live="polite">
+        <!-- Stage 1: Proven Track Record -->
+        <div class="hero-stage stage-pos-center" id="hero-stage-1">
+          <div class="hero-stage-card">
+            <span class="stage-tag mono"><span class="stage-dot"></span>01 // PROVEN TRACK RECORD</span>
+            <h2 class="stage-title">Delivered Before<br><span class="hl-accent">We Were Registered.</span></h2>
+            <div class="stage-rule"></div>
+            <p class="stage-desc">We were paid to build before we called ourselves a studio. We started with five senior builders at NIAT through the Brave program. We delivered &gt;₹8L in real production software with working systems before incorporating.</p>
+            <div class="stage-specs-grid">
+              <div class="stage-spec-item">
+                <span class="stage-spec-val mono">7+</span>
+                <span class="stage-spec-lbl mono">Products Live</span>
+              </div>
+              <div class="stage-spec-item">
+                <span class="stage-spec-val mono">2–4 Wks</span>
+                <span class="stage-spec-lbl mono">Delivery Cycle</span>
+              </div>
+              <div class="stage-spec-item">
+                <span class="stage-spec-val mono">₹8L+</span>
+                <span class="stage-spec-lbl mono">Shipped Before Launch</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Stage 2: Speed with Discipline & Direct Senior Access -->
+        <div class="hero-stage stage-pos-right" id="hero-stage-2">
+          <div class="hero-stage-card">
+            <span class="stage-tag mono"><span class="stage-dot"></span>02 // SPEED WITH DISCIPLINE</span>
+            <h2 class="stage-title">Direct Access.<br><span class="hl-accent">No Middle Layers.</span></h2>
+            <div class="stage-rule"></div>
+            <p class="stage-desc">No account managers, no junior staff taking notes for someone else, no waiting on someone else's sprint cycle. Five senior builders at one table in Hyderabad who write the code, shape the architecture, and answer your messages.</p>
+            <div class="stage-feature-list">
+              <div class="stage-feature-item">
+                <span class="stage-feature-num mono">01</span>
+                <div class="stage-feature-body">
+                  <strong>2–4 Week Turnaround</strong>
+                  <p>Moving from brief to working production software in tight, focused milestones.</p>
+                </div>
+              </div>
+              <div class="stage-feature-item">
+                <span class="stage-feature-num mono">02</span>
+                <div class="stage-feature-body">
+                  <strong>Senior Hands Only</strong>
+                  <p>Every line of code and interface decision is owned by the core team at one table.</p>
+                </div>
+              </div>
+              <div class="stage-feature-item">
+                <span class="stage-feature-num mono">03</span>
+                <div class="stage-feature-body">
+                  <strong>Production-Hardened</strong>
+                  <p>Built on Next.js, PostgreSQL, Cloudflare, and AWS with strict Core Web Vitals discipline.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Stage 3: The 4-Phase Operating System -->
+        <div class="hero-stage stage-pos-left" id="hero-stage-3">
+          <div class="hero-stage-card">
+            <span class="stage-tag mono"><span class="stage-dot"></span>03 // THE OPERATING SYSTEM</span>
+            <h2 class="stage-title">From First Brief<br><span class="hl-accent">To Scaled Value.</span></h2>
+            <div class="stage-rule"></div>
+            <p class="stage-desc">A predictable four-step methodology engineered to eliminate agency drag and compound product value.</p>
+            <div class="stage-division-grid">
+              <a href="#process" class="stage-div-chip">
+                <div>
+                  <span class="chip-name mono">01 FRAME</span>
+                  <div class="chip-tag">Find the leverage &rarr; Aligned product brief</div>
+                </div>
+                <span class="chip-arrow">&rarr;</span>
+              </a>
+              <a href="#process" class="stage-div-chip">
+                <div>
+                  <span class="chip-name mono">02 SHAPE</span>
+                  <div class="chip-tag">Make it tangible &rarr; Rapid clickable direction</div>
+                </div>
+                <span class="chip-arrow">&rarr;</span>
+              </a>
+              <a href="#process" class="stage-div-chip">
+                <div>
+                  <span class="chip-name mono">03 BUILD</span>
+                  <div class="chip-tag">Ship the core &rarr; Live dependable product</div>
+                </div>
+                <span class="chip-arrow">&rarr;</span>
+              </a>
+              <a href="#process" class="stage-div-chip">
+                <div>
+                  <span class="chip-name mono">04 SCALE</span>
+                  <div class="chip-tag">Compound the value &rarr; Growth telemetry system</div>
+                </div>
+                <span class="chip-arrow">&rarr;</span>
+              </a>
+            </div>
+            <div class="stage-footer-action">
+              <a href="#about" class="cta-btn" data-magnetic>Discover Who We Are &darr;</a>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
+
+    <!-- Telemetry flight HUD scrubber indicator -->
+    <div class="hero-flight-hud" id="hero-flight-hud">
+      <div class="hud-phase-label mono">
+        <span class="hud-pulse"></span>
+        <span id="hud-phase-text">ORBITAL VIEW // INITIAL</span>
+      </div>
+      <div class="hud-bars">
+        <div class="hud-bar"><span class="hud-bar-fill" id="hud-bar-1"></span></div>
+        <div class="hud-bar"><span class="hud-bar-fill" id="hud-bar-2"></span></div>
+        <div class="hud-bar"><span class="hud-bar-fill" id="hud-bar-3"></span></div>
+      </div>
+    </div>
+
     <!-- Bottom-left scroll indicator -->
     <div class="hero-scroll-hint">
       <span class="mono">&darr; SCROLL</span>
       <div class="scroll-line"></div>
     </div>
   </section>
+  </div>
 
   <noscript><style>[data-reveal-child]{opacity:1 !important;}</style></noscript>
   <script>
@@ -131,94 +330,76 @@
     }, 1800);
   </script>
 
-  <!-- SECTION 01 — Who We Are / Services & Impact -->
+  <!-- SECTION 01 — Who We Are / LaunchLume Origin & 4 Principles -->
   <section id="about" class="section whoweare-section">
     <div class="section-inner">
       <div class="section-badge-wrap">
-        <span class="section-badge mono">WHO WE ARE</span>
+        <span class="section-badge mono">ABOUT LAUNCHLUME</span>
       </div>
-      <h2 class="section-title-center reveal-up">Digital Excellence<br>Engineered For Growth</h2>
-      <p class="section-subtitle-center reveal-up">We build custom web systems, high-converting platforms, and performance marketing engines that elevate brands worldwide.</p>
+      <h2 class="section-title-center reveal-up">We build the software<br><span class="hl-accent">a business runs on.</span></h2>
+      <p class="section-subtitle-center reveal-up">LaunchLume is a five-person product studio in Hyderabad. We shipped paid client work before we called ourselves a studio.</p>
 
+      <!-- Authentic Origin Story Banner -->
+      <div class="lume-origin-banner reveal-up">
+        <span class="mono lume-origin-badge">ORIGIN // NIAT BRAVE &rarr; HYDERABAD STUDIO</span>
+        <p class="lume-origin-text">
+          We were paid to build before we called ourselves a studio. LaunchLume started with five of us studying at NIAT. Through the Brave program we took on real client work &mdash; not coursework, not concepts &mdash; and delivered more than <strong>₹8 lakh of it</strong> before we ever registered a company. That order is the whole point. Most studios start with a name and go looking for proof. We had the proof first: shipped products, paid invoices, clients who came back. So the five of us still sit at one table in Hyderabad. We take fewer projects than we could, stay close to every decision, and ship software people actually use.
+        </p>
+      </div>
+
+      <!-- Bento Grid with 4 Core Principles + Studio Stats -->
       <div class="bento-grid">
-        <!-- Card 1: Engineering-Led Execution (tall left) -->
-        <div class="bento-card bento-method reveal-up">
-          <h3 class="bento-card-title">Engineering-Led Execution</h3>
-          <p class="bento-card-desc">We don't build generic templates. Every project is engineered from first principles—combining custom web development, interaction design, and growth strategy to drive tangible ROI.</p>
-          <div class="process-steps">
-            <div class="process-step">
-              <div class="step-dot"></div>
-              <span class="step-name">Analyse</span>
-              <span class="step-sub mono">Deep dive into goals</span>
-            </div>
-            <div class="process-step">
-              <div class="step-dot"></div>
-              <span class="step-name">Strategy</span>
-              <span class="step-sub mono">Map growth roadmap</span>
-            </div>
-            <div class="process-step">
-              <div class="step-dot"></div>
-              <span class="step-name">Engineer</span>
-              <span class="step-sub mono">Build custom systems</span>
-            </div>
-            <div class="process-step">
-              <div class="step-dot"></div>
-              <span class="step-name">Scale</span>
-              <span class="step-sub mono">Drive lead generation</span>
-            </div>
-          </div>
-          <div class="bento-tags">
-            <span class="bento-tag mono">High Conversion</span>
-            <span class="bento-tag mono">Custom Web Apps</span>
-            <span class="bento-tag mono">ROI Driven</span>
-          </div>
+        <!-- Principle 1: Clarity over theatre -->
+        <div class="bento-card bento-card-acid reveal-up">
+          <span class="bento-num mono">01</span>
+          <h3 class="bento-card-title">Clarity over theatre</h3>
+          <p class="bento-card-desc">The hard truth early is more valuable than a polished surprise late. We cut process that exists to justify itself. Direct talk, real prototypes, working software.</p>
         </div>
 
-        <!-- Card 2: 01 Strategic Digital Growth -->
-        <div class="bento-card bento-strategic reveal-up">
-          <span class="bento-num">01</span>
-          <h3 class="bento-card-title">Strategic Digital Growth</h3>
-          <p class="bento-card-desc">Merging bespoke web design with multi-channel ad campaigns across Google &amp; Meta to accelerate customer acquisition and maximize revenue.</p>
+        <!-- Principle 2: Momentum with intent -->
+        <div class="bento-card bento-card-coral reveal-up">
+          <span class="bento-num mono">02</span>
+          <h3 class="bento-card-title">Momentum with intent</h3>
+          <p class="bento-card-desc">Speed matters when it is pointed at the right outcome. Fast without breaking things. Decisions made in hours, code deployed in days.</p>
         </div>
 
-        <!-- Card 3: Stat Card -->
-        <div class="bento-card bento-phoenix reveal-in" style="background: radial-gradient(circle at center, #0052cc 0%, #0a2540 80%); border: 1px solid rgba(0, 82, 204, 0.4);">
+        <!-- Studio Stats Card -->
+        <div class="bento-card bento-phoenix bento-card-cosmic reveal-in">
           <div class="phoenix-pulse-rings">
             <div class="phoenix-ring r1"></div>
             <div class="phoenix-ring r2"></div>
             <div class="phoenix-ring r3"></div>
           </div>
           <div class="phoenix-core">
-            <span class="phoenix-year mono">EST. 2024</span>
-            <span class="phoenix-stat">20<em>+</em></span>
-            <span class="phoenix-label mono">Projects Delivered</span>
+            <span class="phoenix-year mono">EST. 2026 // HYDERABAD</span>
+            <span class="phoenix-stat">7<em>+</em></span>
+            <span class="phoenix-label mono">Products Live &amp; In Use</span>
           </div>
         </div>
 
-        <!-- Card 4: 02 Performance & Conversion -->
-        <div class="bento-card bento-proven reveal-up">
-          <span class="bento-num">02</span>
-          <h3 class="bento-card-title">Performance &amp; Conversion</h3>
-          <p class="bento-card-desc">Obsessed with speed, Core Web Vitals excellence, and seamless user journeys that turn casual visitors into paying customers.</p>
+        <!-- Principle 3: Own the outcome -->
+        <div class="bento-card bento-card-violet reveal-up">
+          <span class="bento-num mono">03</span>
+          <h3 class="bento-card-title">Own the outcome</h3>
+          <p class="bento-card-desc">We stay accountable beyond the handoff and the happy path. We don't hand off and vanish. Your users' experience is our responsibility.</p>
         </div>
 
-        <!-- Card 5: Our Mission -->
-        <div class="bento-card bento-vision reveal-up" style="background: #0052cc; color: #ffffff;">
-          <span class="mono bento-vision-label" style="color: rgba(255,255,255,0.8);">OUR MISSION</span>
-          <p class="bento-vision-text" style="color: #ffffff; font-size: clamp(16px, 1.8vw, 20px);">To deliver high-impact web engineering and performance marketing systems that give businesses a dominant competitive edge.</p>
+        <!-- Principle 4: Craft is strategy -->
+        <div class="bento-card bento-card-sky reveal-up">
+          <span class="bento-num mono">04</span>
+          <h3 class="bento-card-title">Craft is strategy</h3>
+          <p class="bento-card-desc">Thoughtful details change how a product is trusted, adopted, and remembered. Good code and considered design aren't cosmetic &mdash; they're your unfair advantage.</p>
         </div>
 
-        <!-- Card 6: Core Services in Focus -->
-        <div class="bento-card bento-tech reveal-up">
-          <h3 class="bento-card-title">Core Services in Focus</h3>
-          <div class="tech-pills">
-            <span class="tech-pill mono">Web &amp; App Engineering</span>
-            <span class="tech-pill mono">UX/UI Design</span>
-            <span class="tech-pill mono">Google &amp; Meta Ads</span>
-            <span class="tech-pill mono">SEO Optimization</span>
-            <span class="tech-pill mono">E-Commerce</span>
-            <span class="tech-pill mono">Product Strategy</span>
-            <span class="tech-pill mono">Analytics</span>
+        <!-- Single Table Guarantee -->
+        <div class="bento-card bento-card-gold reveal-up">
+          <span class="mono bento-badge-gold">OUR OPERATING PROMISE</span>
+          <h3 class="bento-card-title" style="margin-top: 8px;">Five Builders. One Table.</h3>
+          <p class="bento-card-desc">No account managers. No junior handoffs. You speak directly to the engineers and designers building your software.</p>
+          <div class="tech-pills" style="margin-top: 14px;">
+            <span class="tech-pill mono">&gt;₹8L Shipped Pre-Studio</span>
+            <span class="tech-pill mono">2–4 Wks Turnaround</span>
+            <span class="tech-pill mono">Hyderabad, IN</span>
           </div>
         </div>
       </div>
@@ -469,202 +650,147 @@
 
 
 
-  <!-- SECTION 03 &mdash; Client Success Stories -->
+  <!-- SECTION 03 — Client Success Stories / LaunchLume Work -->
   <section id="evidence" class="section portfolio-section">
+    <div id="work"></div>
     <div class="section-inner">
       <div class="section-badge-wrap">
         <span class="section-badge section-badge-fire mono">OUR WORK</span>
       </div>
-      <h2 class="section-title-center reveal-up">Client Success Stories</h2>
-      <p class="section-subtitle-center reveal-up">Transforming businesses through intelligent technology solutions.</p>
+      <h2 class="section-title-center reveal-up">Proof Before Promises.</h2>
+      <p class="section-subtitle-center reveal-up">Real products delivered for real businesses. Shipped, tested, and driving revenue.</p>
 
-      <div class="portfolio-grid">
-        <!-- 1. FinTech -->
-        <div class="portfolio-card reveal-up">
-          <div class="portfolio-thumb">
-            <svg width="100%" height="100%" viewBox="0 0 800 500" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
-              <defs>
-                <linearGradient id="ft-bg" x1="0" y1="0" x2="1" y2="1">
-                  <stop offset="0%" stop-color="#06152b"/>
-                  <stop offset="100%" stop-color="#0a2540"/>
-                </linearGradient>
-                <linearGradient id="ft-chart" x1="0" y1="0" x2="0" y2="1">
-                  <stop offset="0%" stop-color="#60a5fa" stop-opacity="0.4"/>
-                  <stop offset="100%" stop-color="#0052cc" stop-opacity="0.0"/>
-                </linearGradient>
-              </defs>
-              <rect width="800" height="500" fill="url(#ft-bg)"/>
-              <rect x="40" y="30" width="720" height="440" rx="12" fill="#0f172a" stroke="rgba(255,255,255,0.12)" stroke-width="2"/>
-              <rect x="40" y="30" width="720" height="44" fill="#1e293b"/>
-              <circle cx="68" cy="52" r="5" fill="#ef4444"/>
-              <circle cx="86" cy="52" r="5" fill="#f59e0b"/>
-              <circle cx="104" cy="52" r="5" fill="#10b981"/>
-              <text x="130" y="57" fill="#94a3b8" font-size="13" font-family="sans-serif" font-weight="600">Nexora RiskEngine v2.4 — Live Fraud Analytics</text>
-              <rect x="70" y="94" width="200" height="85" rx="8" fill="#1e293b" stroke="rgba(96,165,250,0.2)"/>
-              <text x="90" y="122" fill="#94a3b8" font-size="11" font-family="sans-serif">FALSE POSITIVES</text>
-              <text x="90" y="156" fill="#60a5fa" font-size="26" font-family="sans-serif" font-weight="800">-40.2%</text>
-              <rect x="290" y="94" width="200" height="85" rx="8" fill="#1e293b" stroke="rgba(96,165,250,0.2)"/>
-              <text x="310" y="122" fill="#94a3b8" font-size="11" font-family="sans-serif">API LATENCY</text>
-              <text x="310" y="156" fill="#34d399" font-size="26" font-family="sans-serif" font-weight="800">14ms</text>
-              <rect x="510" y="94" width="220" height="85" rx="8" fill="#1e293b" stroke="rgba(96,165,250,0.2)"/>
-              <text x="530" y="122" fill="#94a3b8" font-size="11" font-family="sans-serif">PREVENTED FRAUD</text>
-              <text x="530" y="156" fill="#60a5fa" font-size="26" font-family="sans-serif" font-weight="800">$4.2M</text>
-              <path d="M 70,420 L 70,340 Q 180,260 300,310 T 520,230 L 730,250 L 730,420 Z" fill="url(#ft-chart)"/>
-              <path d="M 70,340 Q 180,260 300,310 T 520,230 L 730,250" fill="none" stroke="#60a5fa" stroke-width="4"/>
-              <line x1="70" y1="280" x2="730" y2="280" stroke="rgba(255,255,255,0.06)" stroke-dasharray="6 6"/>
-              <line x1="70" y1="350" x2="730" y2="350" stroke="rgba(255,255,255,0.06)" stroke-dasharray="6 6"/>
-            </svg>
-            <span class="portfolio-cat mono">FinTech</span>
-          </div>
-          <div class="portfolio-body">
-            <div class="portfolio-client">
-              <span class="portfolio-dot">&#9670;</span>
-              <h4>Nexora Financial</h4>
+      <div class="lume-portfolio-grid">
+        <!-- 1. SASEC Engineering Dashboard -->
+        <div class="lume-case-card lume-case-sasec reveal-up">
+          <div class="lume-case-thumb">
+            <video class="lume-case-video" autoplay loop muted playsinline preload="auto" poster="images/work/sasec-engineering-poster.jpg">
+              <source src="images/work/sasec-engineering.m4v" type="video/mp4">
+            </video>
+            <div class="lume-case-video-overlay"></div>
+            <div class="lume-case-meta">
+              <span class="lume-case-cat mono">Engineering Operations</span>
+              <span class="lume-case-year mono">2026</span>
             </div>
-            <p>Built AI-powered fraud detection system and complete digital identity for a next-gen fintech startup. Reduced false positives by 40% in pilot phase.</p>
-            <div class="portfolio-tags">
-              <span class="portfolio-tag mono">AI Systems</span>
-              <span class="portfolio-tag mono">Brand Identity</span>
+            <div class="lume-case-live-pill mono">
+              <span class="lume-pulse-dot"></span> LIVE JSW PLATFORM
+            </div>
+          </div>
+          <div class="lume-case-body">
+            <h3 class="lume-case-title">SASEC Engineering Dashboard</h3>
+            <p class="lume-case-desc">An internal operations dashboard that brings workforce tracking, approvals, attendance, payroll, teams, vehicles, and JSW billing automation into one unified platform.</p>
+            <div class="lume-case-quote-box">
+              <p class="lume-case-quote">&ldquo;We had no real-time visibility into who was on site or what we were owed. We brought LaunchLume in to fix that. Billing that used to take days now takes minutes &mdash; that's the difference in how fast we get paid by JSW.&rdquo;</p>
+              <div class="lume-case-author">Chandra Sekhar <span>&mdash; Director, SASEC Engineering</span></div>
+            </div>
+            <div class="lume-case-tags">
+              <span class="lume-tech-pill mono">ERP Systems</span>
+              <span class="lume-tech-pill mono">Dashboard Systems</span>
+              <span class="lume-tech-pill mono">Web Development</span>
             </div>
           </div>
         </div>
 
-        <!-- 2. Healthcare -->
-        <div class="portfolio-card reveal-up">
-          <div class="portfolio-thumb">
-            <svg width="100%" height="100%" viewBox="0 0 800 500" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
-              <defs>
-                <linearGradient id="hc-bg" x1="0" y1="0" x2="1" y2="1">
-                  <stop offset="0%" stop-color="#022c22"/>
-                  <stop offset="100%" stop-color="#064e3b"/>
-                </linearGradient>
-              </defs>
-              <rect width="800" height="500" fill="url(#hc-bg)"/>
-              <rect x="40" y="30" width="720" height="440" rx="12" fill="#06201b" stroke="rgba(52,211,153,0.2)" stroke-width="2"/>
-              <rect x="40" y="30" width="720" height="44" fill="#042f2e"/>
-              <circle cx="68" cy="52" r="5" fill="#ef4444"/>
-              <circle cx="86" cy="52" r="5" fill="#f59e0b"/>
-              <circle cx="104" cy="52" r="5" fill="#10b981"/>
-              <text x="130" y="57" fill="#a7f3d0" font-size="13" font-family="sans-serif" font-weight="600">MedVault Clinical Suite — Patient Compliance Portal</text>
-              <!-- Data Rows -->
-              <rect x="70" y="95" width="660" height="60" rx="6" fill="#0d3b36"/>
-              <circle cx="100" cy="125" r="14" fill="#10b981"/>
-              <text x="130" y="130" fill="#ffffff" font-size="14" font-family="sans-serif" font-weight="600">HIPAA Audit Logs &amp; Patient Records Sync</text>
-              <text x="640" y="130" fill="#34d399" font-size="13" font-family="sans-serif" font-weight="700">COMPLIANT</text>
-              <rect x="70" y="170" width="660" height="60" rx="6" fill="#0d3b36"/>
-              <circle cx="100" cy="200" r="14" fill="#3b82f6"/>
-              <text x="130" y="205" fill="#ffffff" font-size="14" font-family="sans-serif" font-weight="600">Automated Clinical Workflow Pipeline</text>
-              <text x="640" y="205" fill="#60a5fa" font-size="13" font-family="sans-serif" font-weight="700">ACTIVE</text>
-              <!-- ECG / Pulse Line -->
-              <path d="M 70,360 L 220,360 L 250,290 L 280,410 L 310,320 L 340,360 L 730,360" fill="none" stroke="#34d399" stroke-width="4"/>
-              <text x="70" y="440" fill="#a7f3d0" font-size="13" font-family="sans-serif">Admin Overhead Reduced: 60% | Active Records: 142,000</text>
-            </svg>
-            <span class="portfolio-cat mono">Healthcare</span>
-          </div>
-          <div class="portfolio-body">
-            <div class="portfolio-client">
-              <span class="portfolio-dot">&#9670;</span>
-              <h4>MedVault Labs</h4>
+        <!-- 2. 4 Folds Design Studio -->
+        <div class="lume-case-card lume-case-folds reveal-up">
+          <div class="lume-case-thumb">
+            <video class="lume-case-video" autoplay loop muted playsinline preload="auto" poster="images/work/4-folds-design-studio-poster.jpg">
+              <source src="images/work/4-folds-design-studio.m4v" type="video/mp4">
+            </video>
+            <div class="lume-case-video-overlay"></div>
+            <div class="lume-case-meta">
+              <span class="lume-case-cat mono">Architecture &amp; Interiors</span>
+              <span class="lume-case-year mono">2026</span>
             </div>
-            <p>Designed secure patient data management platform with automated compliance reporting. Streamlined clinical workflows and reduced admin overhead by 60%.</p>
-            <div class="portfolio-tags">
-              <span class="portfolio-tag mono">Data Platform</span>
-              <span class="portfolio-tag mono">Automation</span>
+            <div class="lume-case-live-pill mono">
+              <span class="lume-pulse-dot"></span> LIVE SHOWCASE
+            </div>
+          </div>
+          <div class="lume-case-body">
+            <h3 class="lume-case-title">4 Folds Design Studio</h3>
+            <p class="lume-case-desc">An immersive architectural portfolio built around spaces that breathe. A visual-first studio experience presenting architectural philosophy, tactile craft, and built commissions.</p>
+            <div class="lume-case-quote-box">
+              <p class="lume-case-quote">&ldquo;People found us through word of mouth for years &mdash; the work spoke for itself, but online we didn't exist. LaunchLume gave us a website that finally matches what we actually do. Now new clients see the quality before they even walk in.&rdquo;</p>
+              <div class="lume-case-author">Harshini <span>&mdash; 4 Folds Design Studio</span></div>
+            </div>
+            <div class="lume-case-tags">
+              <span class="lume-tech-pill mono">Web Development</span>
+              <span class="lume-tech-pill mono">UI/UX Design</span>
+              <span class="lume-tech-pill mono">Portfolio Experience</span>
             </div>
           </div>
         </div>
 
-        <!-- 3. Logistics -->
-        <div class="portfolio-card reveal-up">
-          <div class="portfolio-thumb">
-            <svg width="100%" height="100%" viewBox="0 0 800 500" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
-              <defs>
-                <linearGradient id="lg-bg" x1="0" y1="0" x2="1" y2="1">
-                  <stop offset="0%" stop-color="#1e1b4b"/>
-                  <stop offset="100%" stop-color="#312e81"/>
-                </linearGradient>
-              </defs>
-              <rect width="800" height="500" fill="url(#lg-bg)"/>
-              <rect x="40" y="30" width="720" height="440" rx="12" fill="#1e1e38" stroke="rgba(165,180,252,0.2)" stroke-width="2"/>
-              <rect x="40" y="30" width="720" height="44" fill="#2e2a52"/>
-              <circle cx="68" cy="52" r="5" fill="#ef4444"/>
-              <circle cx="86" cy="52" r="5" fill="#f59e0b"/>
-              <circle cx="104" cy="52" r="5" fill="#10b981"/>
-              <text x="130" y="57" fill="#c7d2fe" font-size="13" font-family="sans-serif" font-weight="600">SwiftRoute Global — Predictive Logistics &amp; GPS Engine</text>
-              <!-- Route Map Lines -->
-              <path d="M 90,380 C 180,320 250,220 380,280 C 500,340 600,160 700,200" fill="none" stroke="#818cf8" stroke-width="4" stroke-dasharray="8 8"/>
-              <!-- Nodes -->
-              <circle cx="90" cy="380" r="10" fill="#6366f1"/>
-              <circle cx="380" cy="280" r="10" fill="#38bdf8"/>
-              <circle cx="700" cy="200" r="12" fill="#34d399"/>
-              <!-- Stat Card -->
-              <rect x="70" y="95" width="220" height="85" rx="8" fill="#2d2952" stroke="rgba(165,180,252,0.2)"/>
-              <text x="90" y="122" fill="#a5b4fc" font-size="11" font-family="sans-serif">DELIVERY SPEED</text>
-              <text x="90" y="156" fill="#38bdf8" font-size="26" font-family="sans-serif" font-weight="800">+35% FASTER</text>
-              <rect x="310" y="95" width="220" height="85" rx="8" fill="#2d2952" stroke="rgba(165,180,252,0.2)"/>
-              <text x="330" y="122" fill="#a5b4fc" font-size="11" font-family="sans-serif">FLEET EFFICIENCY</text>
-              <text x="330" y="156" fill="#34d399" font-size="26" font-family="sans-serif" font-weight="800">99.4%</text>
-            </svg>
-            <span class="portfolio-cat mono">Logistics</span>
-          </div>
-          <div class="portfolio-body">
-            <div class="portfolio-client">
-              <span class="portfolio-dot">&#9670;</span>
-              <h4>SwiftRoute Global</h4>
+        <!-- 3. Yeskimós Ice Cream -->
+        <div class="lume-case-card lume-case-yeskimos reveal-up">
+          <div class="lume-case-thumb">
+            <video class="lume-case-video" autoplay loop muted playsinline preload="auto" poster="images/work/yeskimos-ice-cream-poster.jpg">
+              <source src="images/work/yeskimos-ice-cream.m4v" type="video/mp4">
+            </video>
+            <div class="lume-case-video-overlay"></div>
+            <div class="lume-case-meta">
+              <span class="lume-case-cat mono">Food &amp; Beverage</span>
+              <span class="lume-case-year mono">2026</span>
             </div>
-            <p>Developed intelligent route optimisation engine for last-mile delivery. Integrated real-time tracking and predictive analytics to cut delivery times by 35%.</p>
-            <div class="portfolio-tags">
-              <span class="portfolio-tag mono">Route AI</span>
-              <span class="portfolio-tag mono">Real-time Analytics</span>
+            <div class="lume-case-live-pill mono">
+              <span class="lume-pulse-dot"></span> LIVE STOREFRONT
+            </div>
+          </div>
+          <div class="lume-case-body">
+            <h3 class="lume-case-title">Yeskimós Ice Cream</h3>
+            <p class="lume-case-desc">A consumer and franchise platform for a Hyderabad artisanal ice cream brand. Includes interactive flavour exploration, store directions, and an automated franchise inquiry funnel.</p>
+            <div class="lume-case-quote-box">
+              <p class="lume-case-quote">&ldquo;We wanted people to feel the brand before they even walked into the parlour. LaunchLume gave us a site that does that &mdash; the menu, our story, where to find us, and how to franchise with us, all in one place that actually looks like YESKIMOS.&rdquo;</p>
+              <div class="lume-case-author">Venkata Rao <span>&mdash; YESKIMOS</span></div>
+            </div>
+            <div class="lume-case-tags">
+              <span class="lume-tech-pill mono">Web Development</span>
+              <span class="lume-tech-pill mono">Branding &amp; Identity</span>
+              <span class="lume-tech-pill mono">Digital Marketing</span>
             </div>
           </div>
         </div>
 
-        <!-- 4. EdTech -->
-        <div class="portfolio-card reveal-up">
-          <div class="portfolio-thumb">
-            <svg width="100%" height="100%" viewBox="0 0 800 500" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
-              <defs>
-                <linearGradient id="ed-bg" x1="0" y1="0" x2="1" y2="1">
-                  <stop offset="0%" stop-color="#431407"/>
-                  <stop offset="100%" stop-color="#7c2d12"/>
-                </linearGradient>
-              </defs>
-              <rect width="800" height="500" fill="url(#ed-bg)"/>
-              <rect x="40" y="30" width="720" height="440" rx="12" fill="#2a1208" stroke="rgba(251,146,60,0.2)" stroke-width="2"/>
-              <rect x="40" y="30" width="720" height="44" fill="#451a03"/>
-              <circle cx="68" cy="52" r="5" fill="#ef4444"/>
-              <circle cx="86" cy="52" r="5" fill="#f59e0b"/>
-              <circle cx="104" cy="52" r="5" fill="#10b981"/>
-              <text x="130" y="57" fill="#fed7aa" font-size="13" font-family="sans-serif" font-weight="600">Learnova Adaptive AI Platform — Student Dashboard</text>
-              <!-- Progress Bars -->
-              <rect x="70" y="100" width="660" height="36" rx="6" fill="#451a03"/>
-              <rect x="70" y="100" width="520" height="36" rx="6" fill="#f97316"/>
-              <text x="85" y="123" fill="#ffffff" font-size="13" font-family="sans-serif" font-weight="700">Machine Learning Curriculum — 82% Completed</text>
-              <rect x="70" y="155" width="660" height="36" rx="6" fill="#451a03"/>
-              <rect x="70" y="155" width="610" height="36" rx="6" fill="#fb923c"/>
-              <text x="85" y="178" fill="#ffffff" font-size="13" font-family="sans-serif" font-weight="700">Student Engagement Lift — 2.5x</text>
-              <!-- Nodes Chart -->
-              <circle cx="180" cy="310" r="30" fill="#ea580c"/>
-              <circle cx="400" cy="270" r="40" fill="#f97316"/>
-              <circle cx="620" cy="330" r="35" fill="#fb923c"/>
-              <line x1="210" y1="300" x2="360" y2="280" stroke="#fdba74" stroke-width="3"/>
-              <line x1="440" y1="280" x2="585" y2="320" stroke="#fdba74" stroke-width="3"/>
-              <text x="180" y="315" fill="#ffffff" font-size="12" font-family="sans-serif" text-anchor="middle" font-weight="700">INPUT</text>
-              <text x="400" y="275" fill="#ffffff" font-size="14" font-family="sans-serif" text-anchor="middle" font-weight="800">ML PATH</text>
-              <text x="620" y="335" fill="#ffffff" font-size="12" font-family="sans-serif" text-anchor="middle" font-weight="700">OUTCOME</text>
-            </svg>
-            <span class="portfolio-cat mono">EdTech</span>
-          </div>
-          <div class="portfolio-body">
-            <div class="portfolio-client">
-              <span class="portfolio-dot">&#9670;</span>
-              <h4>Learnova Academy</h4>
+        <!-- 4. Master Guidance Institute -->
+        <div class="lume-case-card lume-case-master reveal-up">
+          <div class="lume-case-thumb lume-case-thumb-interactive">
+            <div class="lume-interactive-screen">
+              <div class="lume-screen-bar">
+                <div class="screen-dots"><span class="sdot red"></span><span class="sdot yellow"></span><span class="sdot green"></span></div>
+                <div class="screen-address mono">portal.masterguidance.in/student-hub</div>
+              </div>
+              <div class="lume-screen-body">
+                <div class="portal-stat-row">
+                  <div class="pstat-item"><span class="mono plabel">STUDENTS</span><span class="pval">1,200+</span></div>
+                  <div class="pstat-item"><span class="mono plabel">RESPONSE</span><span class="pval">&lt;2 Hrs</span></div>
+                  <div class="pstat-item"><span class="mono plabel">SATISFACTION</span><span class="pval">99.4%</span></div>
+                </div>
+                <div class="portal-scanner-line"></div>
+                <div class="portal-radar-grid">
+                  <div class="radar-card"><div class="rc-tag mono">CAREER ADVISORY</div><div class="rc-title">Personalised Pathways</div><div class="rc-bar"><div class="rc-fill"></div></div></div>
+                  <div class="radar-card"><div class="rc-tag mono">ADMISSIONS</div><div class="rc-title">Real-Time Routing</div><div class="rc-bar"><div class="rc-fill f2"></div></div></div>
+                </div>
+              </div>
             </div>
-            <p>Created adaptive learning platform powered by ML that personalises curriculum paths. Achieved 2.5x improvement in student engagement and completion rates.</p>
-            <div class="portfolio-tags">
-              <span class="portfolio-tag mono">ML Platform</span>
-              <span class="portfolio-tag mono">Adaptive Learning</span>
+            <div class="lume-case-meta">
+              <span class="lume-case-cat mono">Education &amp; Institutions</span>
+              <span class="lume-case-year mono">2026</span>
+            </div>
+            <div class="lume-case-live-pill mono">
+              <span class="lume-pulse-dot"></span> LIVE PORTAL
+            </div>
+          </div>
+          <div class="lume-case-body">
+            <h3 class="lume-case-title">Master Guidance Institute</h3>
+            <p class="lume-case-desc">A clean, accessible academic portal and institutional website providing transparent program roadmaps, admissions guidance, and student query routing.</p>
+            <div class="lume-case-quote-box">
+              <p class="lume-case-quote">&ldquo;It was a pleasure working with you. You delivered a clean, professional website and were responsive to our feedback throughout the project. Thank you for the great work &mdash; I'd happily recommend your services.&rdquo;</p>
+              <div class="lume-case-author">Shubhangi Pant <span>&mdash; Master Guidance Institute</span></div>
+            </div>
+            <div class="lume-case-tags">
+              <span class="lume-tech-pill mono">Web Development</span>
+              <span class="lume-tech-pill mono">UI/UX Design</span>
+              <span class="lume-tech-pill mono">Portal Systems</span>
             </div>
           </div>
         </div>
@@ -672,43 +798,181 @@
     </div>
   </section>
 
-  <!-- CTA -->
+  <!-- SECTION 04 — The 4-Phase Operating System -->
+  <section id="process" class="section process-section">
+    <div class="section-inner">
+      <div class="section-badge-wrap">
+        <span class="section-badge mono">HOW WE WORK</span>
+      </div>
+      <h2 class="section-title-center reveal-up">The Operating System</h2>
+      <p class="section-subtitle-center reveal-up">A predictable four-phase delivery cycle from initial leverage to sustained scale.</p>
+
+      <div class="lume-process-grid">
+        <!-- 01 Frame -->
+        <div class="lume-process-card process-tone-1 reveal-up">
+          <span class="lume-process-step mono">PHASE 01</span>
+          <h3 class="lume-process-name">Frame</h3>
+          <span class="lume-process-headline">Find the leverage</span>
+          <p class="lume-process-desc">We align the business case, user truth, and technical reality before committing to a build. We clarify what not to build just as rigorously as what to build.</p>
+          <div class="lume-process-outcome mono">
+            <span>DELIVERABLE:</span> <strong>Product brief</strong>
+          </div>
+        </div>
+
+        <!-- 02 Shape -->
+        <div class="lume-process-card process-tone-2 reveal-up">
+          <span class="lume-process-step mono">PHASE 02</span>
+          <h3 class="lume-process-name">Shape</h3>
+          <span class="lume-process-headline">Make it tangible</span>
+          <p class="lume-process-desc">Rapid clickable prototypes turn assumptions into something teams can test, debate, and improve. Fast validation prevents costly production detours.</p>
+          <div class="lume-process-outcome mono">
+            <span>DELIVERABLE:</span> <strong>Tested direction</strong>
+          </div>
+        </div>
+
+        <!-- 03 Build -->
+        <div class="lume-process-card process-tone-3 reveal-up">
+          <span class="lume-process-step mono">PHASE 03</span>
+          <h3 class="lume-process-name">Build</h3>
+          <span class="lume-process-headline">Ship the core</span>
+          <p class="lume-process-desc">A senior, integrated squad moves from design system tokens to dependable, high-speed production software with automated CI/CD and zero code debt.</p>
+          <div class="lume-process-outcome mono">
+            <span>DELIVERABLE:</span> <strong>Live product</strong>
+          </div>
+        </div>
+
+        <!-- 04 Scale -->
+        <div class="lume-process-card process-tone-4 reveal-up">
+          <span class="lume-process-step mono">PHASE 04</span>
+          <h3 class="lume-process-name">Scale</h3>
+          <span class="lume-process-headline">Compound the value</span>
+          <p class="lume-process-desc">We measure adoption, transfer knowledge, configure deep system telemetry, and continuously improve the critical flows that drive organic growth.</p>
+          <div class="lume-process-outcome mono">
+            <span>DELIVERABLE:</span> <strong>Growth system</strong>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 05 — Frequently Asked Questions -->
+  <section id="faq" class="section faq-section">
+    <div class="section-inner">
+      <div class="section-badge-wrap">
+        <span class="section-badge mono">COMMON QUESTIONS</span>
+      </div>
+      <h2 class="section-title-center reveal-up">Everything you need to know.</h2>
+      <p class="section-subtitle-center reveal-up">Clear answers about how we work, project timelines, pricing, and post-launch support.</p>
+
+      <div class="lume-faq-wrap reveal-up">
+        <!-- Q1 -->
+        <details class="lume-faq-item">
+          <summary class="lume-faq-summary">
+            <span>What makes your development process different?</span>
+            <span class="lume-faq-icon">+</span>
+          </summary>
+          <div class="lume-faq-content">
+            We work in short, transparent milestones with regular demos and updates, so you’re never left wondering about progress. You’ll always know what’s being built, what’s coming next, and have opportunities to provide feedback throughout the project. No account managers or communication silos &mdash; you talk directly with the engineers and designers building your software.
+          </div>
+        </details>
+
+        <!-- Q2 -->
+        <details class="lume-faq-item">
+          <summary class="lume-faq-summary">
+            <span>How quickly can we start?</span>
+            <span class="lume-faq-icon">+</span>
+          </summary>
+          <div class="lume-faq-content">
+            Most engagements begin within two to four days. A focused Shape sprint is often the fastest way to align scope, team, and technical direction before a larger build.
+          </div>
+        </details>
+
+        <!-- Q3 -->
+        <details class="lume-faq-item">
+          <summary class="lume-faq-summary">
+            <span>Do you work with existing product teams?</span>
+            <span class="lume-faq-icon">+</span>
+          </summary>
+          <div class="lume-faq-content">
+            Yes. We frequently embed with internal teams, take ownership of a critical workstream, or provide a complete senior squad. The operating model is shaped around your capability gaps.
+          </div>
+        </details>
+
+        <!-- Q4 -->
+        <details class="lume-faq-item">
+          <summary class="lume-faq-summary">
+            <span>How much does a typical project cost?</span>
+            <span class="lume-faq-icon">+</span>
+          </summary>
+          <div class="lume-faq-content">
+            Every project is different, so we don’t use generic fixed packages. After a discovery discussion, we provide a detailed proposal with clear scope, timeline, milestones, and transparent pricing &mdash; so you know exactly what you’re paying for. No hidden costs or surprise invoices.
+          </div>
+        </details>
+
+        <!-- Q5 -->
+        <details class="lume-faq-item">
+          <summary class="lume-faq-summary">
+            <span>Can you support the product after launch?</span>
+            <span class="lume-faq-icon">+</span>
+          </summary>
+          <div class="lume-faq-content">
+            Yes. We offer focused optimization periods and longer-term product pods for teams that want continuity through user adoption, infrastructure telemetry, and product scale.
+          </div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 06 — Consultation & Project Brief -->
   <section id="cta" class="cta-section">
     <div class="cta-inner">
       <div class="cta-content">
-        <span class="mono cta-label">LET'S BUILD TOGETHER</span>
-        <h2 class="cta-headline reveal-up">Have a project<br>in mind?<br><em>Let's talk.</em></h2>
-        <p class="cta-body reveal-up">Tell us about your idea, challenge, or vision. We'll get back to you within 24 hours with a clear plan of action.</p>
+        <span class="mono cta-label">TELL US WHAT YOU'RE BUILDING</span>
+        <h2 class="cta-headline reveal-up">Good software changes<br><em>the trajectory.</em></h2>
+        <p class="cta-body reveal-up">Share the opportunity, the obstacle, and the outcome you want. A senior product lead will review it personally.</p>
+        
+        <div class="lume-trust-badges reveal-up">
+          <span class="lume-trust-badge"><span>✓</span> Senior response in 2 business days</span>
+          <span class="lume-trust-badge"><span>✓</span> No sales handoffs — 5 builders at 1 table</span>
+          <span class="lume-trust-badge"><span>✓</span> Mutual NDA available on request</span>
+          <span class="lume-trust-badge"><span>✓</span> Accepting Q4 projects</span>
+        </div>
       </div>
-      <form class="cta-form reveal-up" id="cta-form" action="https://formsubmit.co/thecanonix@gmail.com" method="POST">
-        <input type="hidden" name="_subject" value="New Inquiry from Nexora Website">
+
+      <form class="cta-form reveal-up" id="cta-form" action="https://formsubmit.co/contact@launchlume.in" method="POST">
+        <input type="hidden" name="_subject" value="New Project Inquiry — LaunchLume">
         <input type="hidden" name="_captcha" value="false">
         <input type="hidden" name="_template" value="table">
         <div class="form-group">
           <label for="cta-name" class="mono form-label">Full Name</label>
-          <input type="text" id="cta-name" name="name" class="form-input" placeholder="John Doe" required>
+          <input type="text" id="cta-name" name="name" class="form-input" placeholder="Your name" required>
         </div>
         <div class="form-group">
-          <label for="cta-email" class="mono form-label">Email</label>
-          <input type="email" id="cta-email" name="email" class="form-input" placeholder="john@company.com" required>
+          <label for="cta-email" class="mono form-label">Work Email</label>
+          <input type="email" id="cta-email" name="email" class="form-input" placeholder="name@company.com" required>
         </div>
         <div class="form-group">
-          <label for="cta-service" class="mono form-label">Service</label>
-          <select id="cta-service" name="service" class="form-input form-select">
-            <option value="" disabled selected>Select a service</option>
-            <option value="Custom Web & Application Development">Custom Web &amp; Application Development</option>
-            <option value="Interaction Design & Motion Engineering">Interaction Design &amp; Motion Engineering</option>
-            <option value="Corporate Website Engineering">Corporate Website Engineering</option>
-            <option value="E-commerce Platform Development">E-commerce Platform Development</option>
-            <option value="SEO & Performance Marketing">SEO &amp; Performance Marketing</option>
-            <option value="Other">Other</option>
+          <label for="cta-service" class="mono form-label">Project Type</label>
+          <select id="cta-service" name="service" class="form-input form-select" required>
+            <option value="" disabled selected>Select primary discipline</option>
+            <option value="Web development">Web development (Next.js / Core Web Vitals)</option>
+            <option value="UI/UX design">UI/UX design &amp; Interface systems</option>
+            <option value="ERP systems">ERP systems &amp; Internal platforms</option>
+            <option value="AI integrations">AI integrations &amp; Intelligent agents</option>
+            <option value="SEO optimization">SEO optimization &amp; Technical search</option>
+            <option value="Booking platforms">Booking platforms &amp; Payments</option>
+            <option value="Dashboard systems">Dashboard systems &amp; Analytics</option>
+            <option value="Branding & identity">Branding &amp; Digital identity</option>
+            <option value="Maintenance & support">Maintenance &amp; Support pod</option>
+            <option value="Digital marketing">Digital marketing &amp; Growth</option>
+            <option value="Other">Other ambitious build</option>
           </select>
         </div>
         <div class="form-group">
-          <label for="cta-message" class="mono form-label">Message</label>
-          <textarea id="cta-message" name="message" class="form-input form-textarea" placeholder="Describe your project or inquiry..." rows="4" required></textarea>
+          <label for="cta-message" class="mono form-label">Project Scope &amp; Target Outcome</label>
+          <textarea id="cta-message" name="message" class="form-input form-textarea" placeholder="Tell us about the software you want to build, current challenges, and ideal timeline..." rows="4" required></textarea>
         </div>
-        <button type="submit" class="cta-btn" id="cta-btn">Send Inquiry &rarr;</button>
+        <button type="submit" class="cta-btn" id="cta-btn">Submit Project Brief &rarr;</button>
       </form>
     </div>
   </section>
@@ -722,29 +986,36 @@
     <div class="footer-inner">
       <!-- Col 1: Brand & Status -->
       <div class="footer-col">
-        <img src="images/nexora_nav_logo_dark.svg" alt="Nexora Digital" class="footer-logo-img">
-        <p class="footer-brand-desc">Custom web engineering, digital platforms, and performance marketing engines built for global businesses.</p>
+        <a href="index.html" aria-label="Nexora home">
+          <img src="images/nexora_nav_logo_dark.svg" alt="Nexora Digital" class="footer-logo-img">
+        </a>
+        <p class="footer-brand-desc">Build &middot; Launch &middot; Scale. Independent product studio based in Hyderabad, Telangana, India. Strategy, design, and engineering at one table.</p>
         <div class="footer-status-badge">
           <span class="footer-status-dot"></span>
-          <span>SYSTEMS OPERATIONAL — V8.4</span>
+          <span>ACCEPTING Q4 PROJECTS — HYDERABAD STUDIO</span>
         </div>
         <div class="footer-socials">
-          <a href="https://linkedin.com/company/nexora" class="footer-social" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">
+          <a href="https://linkedin.com/company/launchlume" class="footer-social" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"></path></svg>
           </a>
-          <a href="https://twitter.com/nexora_ai" class="footer-social" aria-label="X (Twitter)" target="_blank" rel="noopener noreferrer">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path></svg>
+          <a href="https://instagram.com/launchlume" class="footer-social" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+          </a>
+          <a href="https://behance.net/launchlume" class="footer-social" aria-label="Behance" target="_blank" rel="noopener noreferrer">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M22 7h-7v-2h7v2zm1.726 10c-.442 1.297-2.029 3-4.726 3-3.109 0-5-2.22-5-5.5 0-3.371 1.954-5.5 4.875-5.5 3.01 0 4.674 2.08 4.674 5.375 0 .341-.04.646-.06.845h-7.489c.148 1.488 1.282 2.457 2.784 2.457 1.42 0 2.277-.665 2.656-1.677h2.286zm-4.726-5.5c-1.424 0-2.316.924-2.484 2.167h4.867c-.104-1.229-.982-2.167-2.383-2.167zm-12.003 8.5h-6.997v-16h7.324c2.613 0 4.676 1.341 4.676 4.093 0 1.636-.889 2.946-2.247 3.556 1.83.626 2.697 2.198 2.697 3.998 0 2.873-2.234 4.353-5.453 4.353zm-4.14-9.351h3.336c1.379 0 2.245-.632 2.245-1.785 0-1.077-.847-1.664-2.155-1.664h-3.426v3.449zm0 6.151h3.585c1.554 0 2.492-.716 2.492-2.003 0-1.246-.957-1.928-2.452-1.928h-3.625v3.931z"></path></svg>
           </a>
         </div>
       </div>
 
       <!-- Col 2: Navigation & Contact -->
       <div class="footer-col">
-        <span class="mono footer-heading">NAVIGATION</span>
-        <a href="#services">Services</a>
-        <a href="packages.html">Packages</a>
+        <span class="mono footer-heading">STUDIO</span>
         <a href="#about">About</a>
-        <a href="mailto:contact@canonix.in" class="footer-link">contact@canonix.in</a>
+        <a href="#services">Services</a>
+        <a href="#evidence">Work</a>
+        <a href="#process">Process</a>
+        <a href="#faq">FAQ</a>
+        <a href="mailto:contact@launchlume.in" class="footer-link">contact@launchlume.in</a>
         <a href="#cta" class="footer-link footer-link-accent">Start a Project &rarr;</a>
       </div>
 
@@ -772,12 +1043,12 @@
 
     <!-- Bottom Bar: Technical SEO & Legal -->
     <div class="footer-bottom">
-      <span>&copy; 2026 Nexora Digital. All rights reserved.</span>
+      <span>&copy; 2026 Nexora Digital. All rights reserved. Hyderabad, Telangana, India.</span>
       <div class="footer-bottom-links">
-        <a href="sitemap.xml">Sitemap.xml</a>
+        <a href="sitemap.xml">Sitemap</a>
         <a href="robots.txt">Robots.txt</a>
-        <a href="#about">Privacy &amp; Terms</a>
-        <a href="mailto:contact@canonix.in">Security Contact</a>
+        <a href="#about">Philosophy</a>
+        <a href="mailto:contact@nexora.digital">Security &amp; Contact</a>
       </div>
     </div>
   </footer>
@@ -788,7 +1059,7 @@
   <script defer src="js/main.js"></script>
   <script defer src="js/hydrate.js"></script>
   <!-- Real Earth hero (three.js) + Lenis/GSAP snap scroll + Motion micro-interactions -->
-  <script type="module" src="js/experience.js"></script>
+  <script type="module" src="js/experience.js?v=2"></script>
 </body>
 
 </html>

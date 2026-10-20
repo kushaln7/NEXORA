@@ -148,27 +148,41 @@
         <span class="hl-curtain-col"></span>
       </div>
       <div class="hero-loader-core">
+        <div class="hero-loader-badge mono">
+          <span class="loader-pulse-dot"></span>
+          <span>NEXORA DIGITAL // SYSTEM RUNTIME</span>
+        </div>
         <div class="orbital-rings-container">
           <div class="orbital-ring ring-outer"></div>
           <div class="orbital-ring ring-middle"></div>
           <div class="orbital-ring ring-inner"></div>
+          <div class="orbital-scan-beam" aria-hidden="true"></div>
           <div class="orbital-center-icon">
-            <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
-              <circle cx="12" cy="12" r="10"></circle>
-              <ellipse cx="12" cy="12" rx="10" ry="4.2" transform="rotate(25 12 12)"></ellipse>
-              <ellipse cx="12" cy="12" rx="4.2" ry="10" transform="rotate(25 12 12)"></ellipse>
-              <circle cx="12" cy="12" r="2" fill="#4d9aff"></circle>
+            <svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10" stroke="#0052cc" stroke-width="1.8"></circle>
+              <ellipse cx="12" cy="12" rx="10" ry="4.2" stroke="#4d9aff" stroke-width="1.4" transform="rotate(25 12 12)"></ellipse>
+              <ellipse cx="12" cy="12" rx="4.2" ry="10" stroke="#00f0ff" stroke-width="1.2" transform="rotate(25 12 12)"></ellipse>
+              <circle cx="12" cy="12" r="2.4" fill="#4d9aff"></circle>
             </svg>
           </div>
         </div>
         <div class="hero-loader-meta">
-          <div class="hero-loader-brand mono lume-text-shine">PRODUCT STUDIO // HYDERABAD, IN</div>
+          <div class="hero-loader-brand mono lume-text-shine">NEXT-GEN DIGITAL PRODUCT STUDIO</div>
           <div class="hero-loader-progress-wrap">
-            <div class="hero-loader-progress-bar" id="hero-loader-bar"></div>
+            <div class="hero-loader-progress-bar" id="hero-loader-bar">
+              <span class="loader-bar-head"></span>
+            </div>
           </div>
           <div class="hero-loader-status-row">
-            <span class="mono hero-loader-text" id="hero-loader-status">INITIALISING ORBITAL TELEMETRY</span>
+            <span class="mono hero-loader-text" id="hero-loader-status">INITIALISING 3D SPATIAL ENGINE</span>
             <span class="mono hero-loader-pct" id="hero-loader-pct">0%</span>
+          </div>
+          <div class="hero-loader-hud-strip mono" aria-hidden="true">
+            <span>SYS // 60FPS</span>
+            <span class="hud-strip-sep">&bull;</span>
+            <span>ENGINE // HIGH PRECISION</span>
+            <span class="hud-strip-sep">&bull;</span>
+            <span>STATUS // ONLINE</span>
           </div>
         </div>
       </div>
@@ -298,7 +312,7 @@
       </div>
     </div>
 
-    <!-- Telemetry flight HUD scrubber indicator -->
+    <!-- Telemetry flight HUD scrubber indicator & Mobile Stage Controls -->
     <div class="hero-flight-hud" id="hero-flight-hud">
       <div class="hud-phase-label mono">
         <span class="hud-pulse"></span>
@@ -309,6 +323,18 @@
         <div class="hud-bar"><span class="hud-bar-fill" id="hud-bar-2"></span></div>
         <div class="hud-bar"><span class="hud-bar-fill" id="hud-bar-3"></span></div>
       </div>
+      <!-- Mobile Step Controller UI (Paging & Touch Stepping) -->
+      <div class="mobile-stage-controls" id="mobile-stage-controls" aria-label="Hero stages navigation">
+        <button type="button" class="mobile-stage-arrow prev" id="mobile-stage-prev" aria-label="Previous stage">&lsaquo;</button>
+        <div class="mobile-stage-dots" id="mobile-stage-dots">
+          <button type="button" class="m-stage-dot active" data-stage="0" aria-label="Stage 0: Overview">00</button>
+          <button type="button" class="m-stage-dot" data-stage="1" aria-label="Stage 1: Track Record">01</button>
+          <button type="button" class="m-stage-dot" data-stage="2" aria-label="Stage 2: Discipline">02</button>
+          <button type="button" class="m-stage-dot" data-stage="3" aria-label="Stage 3: Operating System">03</button>
+        </div>
+        <button type="button" class="mobile-stage-arrow next" id="mobile-stage-next" aria-label="Next stage">&rsaquo;</button>
+      </div>
+      <a href="#about" class="mobile-hero-skip mono" id="mobile-hero-skip">SKIP TO WORK &darr;</a>
     </div>
 
     <!-- Bottom-left scroll indicator -->

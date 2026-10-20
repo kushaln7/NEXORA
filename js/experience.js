@@ -76,8 +76,8 @@ async function initEarth() {
     alpha: true,
     powerPreference: 'high-performance'
   });
-  // Set high DPR for razor-sharp 10K fidelity across retina & 4K displays
-  renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, isMobileDevice ? 2.0 : 2.5));
+  // Set DPR: balanced 1.25 on mobile to avoid shader bottlenecks, high-res on desktop
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, isMobileDevice ? 1.25 : 2.0));
   renderer.toneMapping = THREE.ACESFilmicToneMapping;
   renderer.toneMappingExposure = 1.20;
   renderer.outputColorSpace = THREE.SRGBColorSpace;
@@ -827,6 +827,126 @@ async function initEarth() {
   let targetHeroScrollProgress = 0.0;
   let globeSpinAngle = 0.32;
 
+  // ── Mobile 4-Stage Step Snapping Engine ──
+  const STAGE_SP_POINTS = [0.00, 0.25, 0.54, 0.85];
+  let currentStageIndex = 0;
+  let isStageTransitioning = false;
+  let stageTransitionTimer = null;
+
+  function updateMobileStageUI(idx) {
+    document.querySelectorAll('.m-stage-dot').forEach((dot) => {
+      const s = parseInt(dot.getAttribute('data-stage'), 10);
+      dot.classList.toggle('active', s === idx);
+    });
+    const prevBtn = document.getElementById('mobile-stage-prev');
+    const nextBtn = document.getElementById('mobile-stage-next');
+    if (prevBtn) prevBtn.disabled = (idx === 0);
+    if (nextBtn) nextBtn.disabled = (idx === 3);
+  }
+
+  function setMobileStage(idx, smooth = true) {
+    idx = Math.max(0, Math.min(3, idx));
+    currentStageIndex = idx;
+    const targetSp = STAGE_SP_POINTS[idx];
+    targetHeroScrollProgress = targetSp;
+    updateMobileStageUI(idx);
+
+    if (scrollTrack) {
+      const maxScroll = scrollTrack.offsetHeight - window.innerHeight;
+      if (maxScroll > 0) {
+        const targetScrollY = Math.round(maxScroll * targetSp);
+        if (Math.abs(window.scrollY - targetScrollY) > 30) {
+          window.scrollTo({
+            top: targetScrollY,
+            behavior: smooth ? 'smooth' : 'auto'
+          });
+        }
+      }
+    }
+  }
+
+  // Connect mobile dots & arrows
+  document.querySelectorAll('.m-stage-dot').forEach((dot) => {
+    dot.addEventListener('click', (e) => {
+      e.preventDefault();
+      const s = parseInt(dot.getAttribute('data-stage'), 10);
+      setMobileStage(s);
+    });
+  });
+
+  const mPrevBtn = document.getElementById('mobile-stage-prev');
+  if (mPrevBtn) {
+    mPrevBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      if (currentStageIndex > 0) setMobileStage(currentStageIndex - 1);
+    });
+  }
+
+  const mNextBtn = document.getElementById('mobile-stage-next');
+  if (mNextBtn) {
+    mNextBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      if (currentStageIndex < 3) setMobileStage(currentStageIndex + 1);
+      else {
+        const aboutEl = document.getElementById('about');
+        if (aboutEl) aboutEl.scrollIntoView({ behavior: 'smooth' });
+      }
+    });
+  }
+
+  // ── Touch swipe navigation on mobile inside the hero ──
+  let touchStartY = 0;
+  let touchStartX = 0;
+  let touchStartTime = 0;
+
+  window.addEventListener('touchstart', (e) => {
+    if (e.touches && e.touches.length === 1) {
+      touchStartY = e.touches[0].clientY;
+      touchStartX = e.touches[0].clientX;
+      touchStartTime = Date.now();
+    }
+  }, { passive: true });
+
+  window.addEventListener('touchend', (e) => {
+    if (!isMobileDevice || isStageTransitioning || !scrollTrack) return;
+    if (!e.changedTouches || e.changedTouches.length === 0) return;
+
+    const rect = scrollTrack.getBoundingClientRect();
+    const maxScroll = scrollTrack.offsetHeight - window.innerHeight;
+    const isInHero = rect.top <= 20 && rect.bottom >= window.innerHeight - 20;
+    if (!isInHero) return;
+
+    const touchEndY = e.changedTouches[0].clientY;
+    const touchEndX = e.changedTouches[0].clientX;
+    const deltaY = touchStartY - touchEndY; // positive = swiping up (scrolling down)
+    const deltaX = touchStartX - touchEndX;
+
+    // Minimum swipe threshold & primarily vertical
+    if (Math.abs(deltaY) > 35 && Math.abs(deltaY) > Math.abs(deltaX) * 1.15) {
+      if (deltaY > 0) {
+        // Swipe Up -> Advance 1 stage
+        if (currentStageIndex < 3) {
+          isStageTransitioning = true;
+          setMobileStage(currentStageIndex + 1);
+          clearTimeout(stageTransitionTimer);
+          stageTransitionTimer = setTimeout(() => { isStageTransitioning = false; }, 420);
+        } else {
+          // At final stage 3: smooth scroll down into next section
+          const aboutEl = document.getElementById('about');
+          if (aboutEl) aboutEl.scrollIntoView({ behavior: 'smooth' });
+        }
+      } else {
+        // Swipe Down -> Step back 1 stage
+        if (currentStageIndex > 0) {
+          isStageTransitioning = true;
+          setMobileStage(currentStageIndex - 1);
+          clearTimeout(stageTransitionTimer);
+          stageTransitionTimer = setTimeout(() => { isStageTransitioning = false; }, 420);
+        }
+      }
+    }
+  }, { passive: true });
+
   function updateHeroScroll() {
     if (!scrollTrack) return;
     const rect = scrollTrack.getBoundingClientRect();
@@ -836,7 +956,21 @@ async function initEarth() {
       return;
     }
     const rawP = -rect.top / maxScroll;
-    targetHeroScrollProgress = Math.max(0, Math.min(1, rawP));
+    const spClamped = Math.max(0, Math.min(1, rawP));
+
+    if (isMobileDevice) {
+      if (!isStageTransitioning) {
+        // Synchronize stage indicator from external scroll
+        if (spClamped < 0.12) currentStageIndex = 0;
+        else if (spClamped < 0.38) currentStageIndex = 1;
+        else if (spClamped < 0.68) currentStageIndex = 2;
+        else currentStageIndex = 3;
+        updateMobileStageUI(currentStageIndex);
+        targetHeroScrollProgress = spClamped;
+      }
+    } else {
+      targetHeroScrollProgress = spClamped;
+    }
   }
   window.__updateHeroScroll = updateHeroScroll;
   window.addEventListener('scroll', updateHeroScroll, { passive: true });
@@ -1055,7 +1189,7 @@ async function initEarth() {
     if (stage0) {
       stage0.style.opacity = s0_op.toFixed(3);
       stage0.style.transform = `translateY(${(-28 * (1 - s0_op)).toFixed(1)}px)`;
-      stage0.style.filter = `blur(${(8 * (1 - s0_op)).toFixed(1)}px)`;
+      stage0.style.filter = isMobileDevice ? 'none' : `blur(${(8 * (1 - s0_op)).toFixed(1)}px)`;
       stage0.style.pointerEvents = s0_op > 0.05 ? 'auto' : 'none';
     }
 
@@ -1065,7 +1199,7 @@ async function initEarth() {
     if (stage1) {
       stage1.style.opacity = s1_op.toFixed(3);
       stage1.style.transform = `translateY(${((1 - s1_op) * 22).toFixed(1)}px) scale(${(0.96 + 0.04 * s1_op).toFixed(3)})`;
-      stage1.style.filter = `blur(${((1 - s1_op) * 8).toFixed(1)}px)`;
+      stage1.style.filter = isMobileDevice ? 'none' : `blur(${((1 - s1_op) * 8).toFixed(1)}px)`;
       stage1.style.pointerEvents = s1_op > 0.08 ? 'auto' : 'none';
       if (s1_op > 0.01) stage1.classList.add('stage-active');
       else stage1.classList.remove('stage-active');
@@ -1077,7 +1211,7 @@ async function initEarth() {
     if (stage2) {
       stage2.style.opacity = s2_op.toFixed(3);
       stage2.style.transform = `translateY(${((1 - s2_op) * 22).toFixed(1)}px) scale(${(0.96 + 0.04 * s2_op).toFixed(3)})`;
-      stage2.style.filter = `blur(${((1 - s2_op) * 8).toFixed(1)}px)`;
+      stage2.style.filter = isMobileDevice ? 'none' : `blur(${((1 - s2_op) * 8).toFixed(1)}px)`;
       stage2.style.pointerEvents = s2_op > 0.08 ? 'auto' : 'none';
       if (s2_op > 0.01) stage2.classList.add('stage-active');
       else stage2.classList.remove('stage-active');
@@ -1089,7 +1223,7 @@ async function initEarth() {
     if (stage3) {
       stage3.style.opacity = s3_op.toFixed(3);
       stage3.style.transform = `translateY(${((1 - s3_op) * 22).toFixed(1)}px) scale(${(0.96 + 0.04 * s3_op).toFixed(3)})`;
-      stage3.style.filter = `blur(${((1 - s3_op) * 8).toFixed(1)}px)`;
+      stage3.style.filter = isMobileDevice ? 'none' : `blur(${((1 - s3_op) * 8).toFixed(1)}px)`;
       stage3.style.pointerEvents = s3_op > 0.08 ? 'auto' : 'none';
       if (s3_op > 0.01) stage3.classList.add('stage-active');
       else stage3.classList.remove('stage-active');
@@ -1204,8 +1338,20 @@ async function initScrollExperience() {
   if (typeof gsap === 'undefined' || typeof ScrollTrigger === 'undefined') return;
   gsap.registerPlugin(ScrollTrigger);
 
+  const progressBar = document.getElementById('scroll-progress-bar');
+  function updateScrollProgress(y) {
+    if (!progressBar) return;
+    const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
+    const pct = maxScroll > 0 ? Math.min(100, Math.max(0, (y / maxScroll) * 100)) : 0;
+    progressBar.style.width = `${pct.toFixed(1)}%`;
+  }
+
   let lenis = null;
-  if (!prefersReducedMotion) {
+  const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0 || window.innerWidth < 900;
+
+  // On touch / mobile screens, use native 120Hz/60Hz compositor momentum scrolling
+  // Only smooth mouse wheels on desktop to avoid touch lag and stutter
+  if (!prefersReducedMotion && !isTouchDevice) {
     try {
       const { default: Lenis } = await import('https://unpkg.com/lenis@1.3.26/dist/lenis.mjs');
       const isMobileViewport = window.matchMedia('(max-width: 680px)').matches;
@@ -1216,20 +1362,9 @@ async function initScrollExperience() {
         gestureOrientation: 'vertical',
         smoothWheel: true,
         syncTouch: false,
-        wheelMultiplier: isMobileViewport ? 0.72 : 0.9,
-        touchMultiplier: isMobileViewport ? 0.86 : 1,
-        overscroll: false,
-        autoRaf: false,
+        wheelMultiplier: 0.95,
       });
       window.__lenis = lenis;
-
-      const progressBar = document.getElementById('scroll-progress-bar');
-      function updateScrollProgress(y) {
-        if (!progressBar) return;
-        const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
-        const pct = maxScroll > 0 ? Math.min(100, Math.max(0, (y / maxScroll) * 100)) : 0;
-        progressBar.style.width = `${pct.toFixed(1)}%`;
-      }
 
       lenis.on('scroll', (e) => {
         ScrollTrigger.update();
@@ -1240,22 +1375,21 @@ async function initScrollExperience() {
       });
       gsap.ticker.add((time) => lenis.raf(time * 1000));
       gsap.ticker.lagSmoothing(0);
-
-      window.addEventListener('scroll', () => {
-        updateScrollProgress(window.scrollY);
-      }, { passive: true });
-
-      // If page was restored with existing scroll position, synchronize immediately
-      if (window.scrollY > 0) {
-        requestAnimationFrame(() => {
-          lenis.resize();
-          ScrollTrigger.refresh();
-          updateScrollProgress(window.scrollY);
-        });
-      }
     } catch (e) {
-      console.warn('Lenis could not be initialized:', e);
+      console.warn('Lenis desktop init fallback:', e);
     }
+  }
+
+  window.addEventListener('scroll', () => {
+    updateScrollProgress(window.scrollY);
+  }, { passive: true });
+
+  if (window.scrollY > 0) {
+    requestAnimationFrame(() => {
+      if (lenis) lenis.resize();
+      ScrollTrigger.refresh();
+      updateScrollProgress(window.scrollY);
+    });
   }
 
   // ── Fluid Anchor Scrolling (Glides smoothly without jarring jumps) ──
@@ -1290,10 +1424,14 @@ async function initScrollExperience() {
 
   // ── Smooth Back-to-Top Integration ──
   const backToTop = document.getElementById('back-to-top');
-  if (backToTop && lenis) {
+  if (backToTop) {
     backToTop.addEventListener('click', (e) => {
       e.preventDefault();
-      lenis.scrollTo(0, { duration: 1.4 });
+      if (lenis) {
+        lenis.scrollTo(0, { duration: 1.4 });
+      } else {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
     });
   }
 }
@@ -1312,7 +1450,7 @@ function initCard3DTilt() {
 
     let rafId = null;
     card.addEventListener('pointermove', (e) => {
-      if (prefersReducedMotion) return;
+      if (prefersReducedMotion || e.pointerType === 'touch') return;
       if (rafId) cancelAnimationFrame(rafId);
       rafId = requestAnimationFrame(() => {
         const rect = card.getBoundingClientRect();

@@ -6,20 +6,19 @@
 /* ── Tokens ─────────────────────────────────────────── */
 :root {
   /* LAYER 1 — Matte off-white backgrounds */
-  --bg: #f4f2ef;
-  --surface: #ece9e4;
-  --surface2: #e2ded7;
-  /* Structural lines: ocean blue toned */
-  --line: #d1cdc5;
-  --line-light: #e2ded7;
-  /* LAYER 2 — Ocean blue matte text */
-  --t1: #0a2540;
-  --t2: #2a3449;
-  --t3: #555b78;
-  /* LAYER 3 — Off-purple matte accent */
-  --fire: #0052cc;
-  --fire-dim: #0a2540;
-  --fire-glow: rgba(0, 82, 204, 0.12);
+ --bg: #f7f5ef;
+ --surface: #ebe7dc;
+ --surface2: #ded8c9;
+ --line: #c9c2b3;
+ --line-light: #ded8c9;
+ 
+ --t1: #101c2c;
+ --t2: #30435c;
+ --t3: #617087;
+ 
+ --fire: #d65332;
+ --fire-dim: #101c2c;
+ --fire-glow: rgba(214, 83, 50, 0.14);
   --grain-opacity: 0.045;
   /* Slightly stronger for light bg */
 

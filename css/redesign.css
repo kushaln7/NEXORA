@@ -121,6 +121,35 @@ img, canvas { max-width: 100%; }
   *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; }
 }
 
+/* Mobile performance pass: keep the cinematic direction without making phones
+   pay for desktop-only blur, grain, and long scroll effects. */
+@media (max-width: 680px) {
+  body::after { opacity: 0.018; }
+
+  .earth-hero,
+  .hero-scroll-track,
+  .earth-hero-visual,
+  .earth-hero-inner { transform: translateZ(0); }
+
+  .earth-hero-visual { will-change: auto; }
+  #earth-canvas { filter: none; transition: opacity 0.8s ease; }
+  .hero-stage-card,
+  .cta-btn-ghost,
+  .nav-mobile-menu { backdrop-filter: none; -webkit-backdrop-filter: none; }
+  .hero-stage-card { background: rgba(5, 11, 24, 0.92); }
+  .earth-hero .cta-btn,
+  .cta-btn-ghost { min-height: 52px; padding-inline: 20px; }
+  .nav-hamburger { min-width: 44px; min-height: 44px; align-items: center; justify-content: center; }
+  .mobile-stage-controls { bottom: 20px; }
+}
+
+@media (max-width: 380px) {
+  .earth-hero-inner { padding-bottom: 72px; }
+  .hero-headline { font-size: clamp(38px, 12vw, 52px); }
+  .hero-sub { font-size: 13px; }
+  .hero-loader-hud-strip { display: none; }
+}
+
 .earth-hero {
   position: sticky;
   top: 0;
@@ -3174,7 +3203,7 @@ body.page-redirecting main {
   color: rgba(255, 255, 255, 0.75);
 }
 
-/* ── Consultation Trust Badges ───────────────────────────── */
+/* ── Consultation Trust Badges ───────────────────���───────── */
 .lume-trust-badges {
   display: flex;
   flex-wrap: wrap;

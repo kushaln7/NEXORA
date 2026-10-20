@@ -1208,15 +1208,18 @@ async function initScrollExperience() {
   if (!prefersReducedMotion) {
     try {
       const { default: Lenis } = await import('https://unpkg.com/lenis@1.3.26/dist/lenis.mjs');
+      const isMobileViewport = window.matchMedia('(max-width: 680px)').matches;
       lenis = new Lenis({
-        duration: 1.25,
-        easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+        duration: isMobileViewport ? 0.78 : 1.05,
+        easing: (t) => 1 - Math.pow(1 - t, 4),
         orientation: 'vertical',
         gestureOrientation: 'vertical',
         smoothWheel: true,
         syncTouch: false,
-        wheelMultiplier: 0.95,
-        touchMultiplier: 1.2,
+        wheelMultiplier: isMobileViewport ? 0.72 : 0.9,
+        touchMultiplier: isMobileViewport ? 0.86 : 1,
+        overscroll: false,
+        autoRaf: false,
       });
       window.__lenis = lenis;
 

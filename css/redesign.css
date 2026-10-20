@@ -98,6 +98,24 @@ img, canvas { max-width: 100%; }
   .hero-loader-meta { width: min(280px, calc(100vw - 48px)); }
 }
 
+@media (max-width: 680px) {
+  html {
+    scroll-behavior: auto;
+    overscroll-behavior-y: none;
+  }
+
+  body {
+    overscroll-behavior-y: none;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .hero-scroll-track,
+  .earth-hero,
+  .whoweare-section {
+    contain: paint;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; }
@@ -1941,13 +1959,34 @@ body.page-redirecting main {
 /* Bento Grid Layout across viewports (keeps card design entirely same, prevents any text clipping) */
 @media (max-width: 680px) {
   .whoweare-section .bento-grid {
-    grid-template-columns: 1fr !important;
-    gap: 16px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 0 !important;
+    padding-bottom: 12vh;
   }
+
   .whoweare-section .bento-card {
+    position: sticky;
+    top: 76px;
+    z-index: 1;
+    width: 100%;
+    min-height: 260px;
+    margin: 0 0 22vh;
     grid-column: auto !important;
     grid-row: auto !important;
+    transform: translateZ(0);
+    transition: transform 420ms cubic-bezier(.16, 1, .3, 1), opacity 420ms ease, filter 420ms ease;
+    will-change: transform;
   }
+
+  .whoweare-section .bento-card:nth-child(2) { z-index: 2; }
+  .whoweare-section .bento-card:nth-child(3) { z-index: 3; }
+  .whoweare-section .bento-card:nth-child(4) { z-index: 4; }
+  .whoweare-section .bento-card:nth-child(5) { z-index: 5; }
+  .whoweare-section .bento-card:nth-child(6) { z-index: 6; }
+
+  .whoweare-section .bento-card:last-child { margin-bottom: 0; }
+  .whoweare-section .bento-card p { max-width: 38ch; }
 }
 
 @media (min-width: 681px) and (max-width: 1024px) {

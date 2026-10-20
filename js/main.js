@@ -253,8 +253,9 @@
     const camera = new THREE.PerspectiveCamera(60, W / H, 0.1, 1000);
     camera.position.set(0, 0, 5);
 
-    const renderer = new THREE.WebGLRenderer({ canvas, alpha: true, antialias: true });
-    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+    const isPhone = window.matchMedia('(max-width: 680px)').matches;
+    const renderer = new THREE.WebGLRenderer({ canvas, alpha: true, antialias: !isPhone });
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio, isPhone ? 1.25 : 2));
     renderer.setSize(W, H);
     renderer.setClearColor(0x000000, 0);
 
@@ -286,7 +287,7 @@
     scene.add(ring2);
 
     // ── Particles ──────────────────────────────
-    const PARTICLE_COUNT = window.innerWidth < 600 ? 300 : window.innerWidth < 1024 ? 550 : 900;
+    const PARTICLE_COUNT = isPhone ? 140 : window.innerWidth < 1024 ? 420 : 900;
     const partPositions = new Float32Array(PARTICLE_COUNT * 3);
     const partTargets = new Float32Array(PARTICLE_COUNT * 3);
     const partColors = new Float32Array(PARTICLE_COUNT * 3);

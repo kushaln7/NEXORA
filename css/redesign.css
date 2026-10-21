@@ -121,6 +121,69 @@ img, canvas { max-width: 100%; }
   *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; }
 }
 
+/* Compact monochrome card system with a tactile mobile rail. */
+.bento-grid,
+.solutions-grid,
+.research-cards,
+.suite-grid {
+  gap: clamp(10px, 1.5vw, 18px) !important;
+}
+
+.bento-card,
+.solution-card,
+.research-card,
+.suite-card {
+  border-color: rgba(16, 28, 44, 0.16) !important;
+  background: #ffffff !important;
+  box-shadow: 0 10px 24px rgba(16, 28, 44, 0.06) !important;
+  transition: transform 320ms cubic-bezier(0.16, 1, 0.3, 1), box-shadow 320ms ease, border-color 320ms ease;
+}
+
+.bento-card:hover,
+.solution-card:hover,
+.research-card:hover,
+.suite-card:hover {
+  border-color: rgba(16, 28, 44, 0.42) !important;
+  box-shadow: 0 16px 30px rgba(16, 28, 44, 0.11) !important;
+  transform: translateY(-4px);
+}
+
+.bento-card *,
+.solution-card *,
+.research-card *,
+.suite-card * {
+  border-color: rgba(16, 28, 44, 0.14);
+}
+
+@media (max-width: 680px) {
+  .bento-grid,
+  .solutions-grid,
+  .research-cards,
+  .suite-grid {
+    display: flex !important;
+    gap: 12px !important;
+    overflow-x: auto;
+    overscroll-behavior-x: contain;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+    padding: 4px 18px 14px;
+    margin-inline: -18px;
+  }
+
+  .bento-grid::-webkit-scrollbar,
+  .solutions-grid::-webkit-scrollbar,
+  .research-cards::-webkit-scrollbar,
+  .suite-grid::-webkit-scrollbar { display: none; }
+
+  .bento-card,
+  .solution-card,
+  .research-card,
+  .suite-card {
+    flex: 0 0 min(82vw, 330px) !important;
+    scroll-snap-align: start;
+  }
+}
+
 /* Mobile performance pass: keep the cinematic direction without making phones
    pay for desktop-only blur, grain, and long scroll effects. */
 @media (max-width: 680px) {
@@ -1930,7 +1993,7 @@ body.page-redirecting main {
   margin: 0;
 }
 
-/* ── 10 Services Hub ─────────────────────────────────────── */
+/* ── 10 Services Hub ���────────────────────────────────────── */
 .lume-services-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));

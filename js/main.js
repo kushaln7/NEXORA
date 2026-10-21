@@ -144,7 +144,7 @@
               <circle cx="12" cy="12" r="2.5" fill="#4d9aff"></circle>
             </svg>
           </div>
-          <div class="mono q-curtain-title">NEXORA // ROUTING TELEMETRY</div>
+          <div class="mono q-curtain-title">NEXORA · ROUTING TELEMETRY</div>
           <div class="q-curtain-progress-track">
             <div class="q-curtain-progress-fill"></div>
           </div>
@@ -351,7 +351,7 @@
     logoGroup.visible = false;
     scene.add(logoGroup);
 
-    // ── Animation State ─────────────────────────
+    // ── Animation State ──────────────────────���──
     let assemblyProgress = 0;
     let dispersalProgress = 0;
     let phxOpacity = 0;
@@ -570,7 +570,7 @@
   /* ═══════════════════════════════════════════════
      3a. REVEAL ANIMATIONS (vanilla — no GSAP needed)
      Must work even if CDN fails.
-  ═══════════════════════════════════════════════ */
+  ═════════════���═════════════════════════════════ */
   (function initRevealObservers() {
     // ── Reveal up (LaunchLume style: viewport margin -50px, smooth cubic-bezier) ──
     const revealObserver = new IntersectionObserver((entries) => {

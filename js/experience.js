@@ -1238,7 +1238,7 @@ async function initEarth() {
       bar3.style.width = `${(b3 * 100).toFixed(0)}%`;
 
       if (sp < 0.16) {
-        phaseText.textContent = 'ORBITAL VIEW // INITIAL';
+        phaseText.textContent = 'ORBITAL VIEW · INITIAL';
       } else if (sp < 0.44) {
         phaseText.textContent = '01 // PLANETARY HORIZON';
       } else if (sp < 0.72) {

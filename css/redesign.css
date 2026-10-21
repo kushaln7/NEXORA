@@ -161,7 +161,7 @@ img, canvas { max-width: 100%; }
   .research-cards,
   .suite-grid {
     display: flex !important;
-    gap: 12px !important;
+    gap: 10px !important;
     overflow-x: auto;
     overscroll-behavior-x: contain;
     scroll-snap-type: x mandatory;
@@ -179,9 +179,80 @@ img, canvas { max-width: 100%; }
   .solution-card,
   .research-card,
   .suite-card {
-    flex: 0 0 min(82vw, 330px) !important;
+    flex: 0 0 min(78vw, 310px) !important;
     scroll-snap-align: start;
   }
+}
+
+/* Final monochrome pass: keep every card readable against the dark site. */
+.bento-card,
+.solution-card,
+.research-card,
+.suite-card {
+  color: #f5f5f5 !important;
+  background: #111111 !important;
+  border: 1px solid #3a3a3a !important;
+  box-shadow: 0 12px 26px rgba(0, 0, 0, 0.28) !important;
+}
+
+.bento-card *,
+.solution-card *,
+.research-card *,
+.suite-card * {
+  color: inherit;
+}
+
+.bento-card-title,
+.solution-card-title,
+.research-card-title,
+.suite-card-name {
+  color: #ffffff !important;
+}
+
+.bento-card-desc,
+.solution-card-desc,
+.research-card-desc,
+.suite-card-desc,
+.suite-card-tagline {
+  color: #c7c7c7 !important;
+}
+
+.bento-card:hover,
+.solution-card:hover,
+.research-card:hover,
+.suite-card:hover {
+  background: #181818 !important;
+  border-color: #707070 !important;
+  box-shadow: 0 16px 30px rgba(0, 0, 0, 0.4) !important;
+}
+
+.hero-stage-card {
+  color: #f5f5f5;
+}
+
+/* Keep the primary message readable even if the optional reveal script is delayed. */
+.earth-hero-text,
+.earth-hero-text [data-reveal-child] {
+  opacity: 1 !important;
+  visibility: visible !important;
+  filter: none !important;
+}
+
+.hero-headline,
+.hero-sub {
+  color: #f5f5f5 !important;
+}
+
+.hero-sub {
+  text-shadow: 0 2px 16px rgba(0, 0, 0, 0.72);
+}
+
+.stage-tag,
+.stage-desc,
+.stage-feature-body p,
+.stage-spec-lbl,
+.chip-tag {
+  color: #c7c7c7 !important;
 }
 
 /* Mobile performance pass: keep the cinematic direction without making phones

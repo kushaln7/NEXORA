@@ -144,7 +144,11 @@
               <circle cx="12" cy="12" r="2.5" fill="#4d9aff"></circle>
             </svg>
           </div>
+<<<<<<< Updated upstream
           <div class="mono q-curtain-title">NEXORA · ROUTING TELEMETRY</div>
+=======
+          <div class="mono q-curtain-title">NEXORA &bull; ROUTING TELEMETRY</div>
+>>>>>>> Stashed changes
           <div class="q-curtain-progress-track">
             <div class="q-curtain-progress-fill"></div>
           </div>
@@ -213,7 +217,7 @@
 
         const routeName = getRouteName(href);
         if (destLabelEl) {
-          destLabelEl.textContent = `ROUTING TO ${routeName} // SYNCED`;
+          destLabelEl.textContent = `ROUTING TO ${routeName} \u2022 SYNCED`;
         }
 
         document.body.classList.add('page-redirecting');

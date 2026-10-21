@@ -37,7 +37,7 @@ img, canvas { max-width: 100%; }
 
 @media (max-width: 900px) {
   .hero-scroll-track {
-    height: 380vh;
+    height: 220vh;
   }
 }
 
@@ -81,11 +81,18 @@ img, canvas { max-width: 100%; }
   .hero-scroll-hint { left: var(--gutter); bottom: 24px; }
 
   .earth-hero-stages { padding-inline: var(--gutter); }
-  .hero-stage-card { width: min(100%, 420px); padding: 20px; }
-  .stage-title { font-size: clamp(32px, 10vw, 48px); line-height: 1; }
-  .stage-specs-grid { grid-template-columns: 1fr; gap: 12px; }
-  .stage-feature-item { grid-template-columns: 32px 1fr; }
-  .stage-division-grid { grid-template-columns: 1fr; }
+  .hero-stage { padding: 68px 14px 20px !important; justify-content: center !important; }
+  .hero-stage-card { width: 100% !important; max-width: 420px !important; padding: 18px 18px !important; gap: 11px !important; margin: auto !important; }
+  .stage-title { font-size: clamp(22px, 6.2vw, 27px) !important; line-height: 1.15 !important; }
+  .stage-desc { font-size: 13px !important; line-height: 1.5 !important; }
+  .stage-specs-grid { grid-template-columns: repeat(3, 1fr) !important; gap: 8px !important; padding-top: 10px !important; }
+  .stage-spec-item { padding: 6px 4px !important; }
+  .stage-spec-val { font-size: 16px !important; }
+  .stage-spec-lbl { font-size: 9px !important; }
+  .stage-feature-list { gap: 8px !important; }
+  .stage-feature-item { grid-template-columns: 24px 1fr !important; padding: 8px 10px !important; gap: 10px !important; }
+  .stage-division-grid { grid-template-columns: 1fr !important; gap: 6px !important; }
+  .stage-div-chip { padding: 8px 12px !important; }
 
   .section-inner { padding-inline: var(--gutter); }
   .section-title-center { font-size: clamp(32px, 9vw, 48px); line-height: 1.02; }
@@ -920,21 +927,17 @@ html.preload-bypassed .earth-hero .hero-loader {
   pointer-events: auto;
 }
 
-.hero-stage.stage-pos-center {
-  align-items: center;
-}
-
-.hero-stage.stage-pos-center .hero-stage-card {
-  text-align: center;
-  align-items: center;
-}
-
-.hero-stage.stage-pos-right {
-  align-items: flex-end;
-}
-
+.hero-stage.stage-pos-center,
+.hero-stage.stage-pos-right,
 .hero-stage.stage-pos-left {
-  align-items: flex-start;
+  align-items: center; /* Center-aligned scroll stack across all devices to minimize lateral jumping */
+}
+
+.hero-stage.stage-pos-center .hero-stage-card,
+.hero-stage.stage-pos-right .hero-stage-card,
+.hero-stage.stage-pos-left .hero-stage-card {
+  text-align: left;
+  align-items: stretch;
 }
 
 .hero-stage-card {
@@ -942,14 +945,14 @@ html.preload-bypassed .earth-hero .hero-loader {
   max-width: 530px;
   margin-top: auto;
   margin-bottom: auto;
-  background: rgba(5, 11, 24, 0.74);
+  background: rgba(12, 14, 18, 0.88);
   backdrop-filter: blur(28px);
   -webkit-backdrop-filter: blur(28px);
-  border: 1px solid rgba(77, 154, 255, 0.22);
+  border: 1px solid rgba(255, 255, 255, 0.12);
   box-shadow:
-    0 24px 60px rgba(0, 0, 0, 0.75),
-    0 0 40px rgba(77, 154, 255, 0.08),
-    inset 0 1px 0 rgba(255, 255, 255, 0.12);
+    0 24px 60px rgba(0, 0, 0, 0.85),
+    0 0 0 1px rgba(255, 255, 255, 0.04),
+    inset 0 1px 0 rgba(255, 255, 255, 0.15);
   border-radius: 20px;
   padding: 34px 38px;
   display: flex;
@@ -958,6 +961,7 @@ html.preload-bypassed .earth-hero .hero-loader {
   position: relative;
   overflow: hidden;
   pointer-events: auto;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .hero-stage-card::before {
@@ -967,7 +971,7 @@ html.preload-bypassed .earth-hero .hero-loader {
   left: 0;
   right: 0;
   height: 2px;
-  background: linear-gradient(90deg, transparent, #4d9aff, transparent);
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.45), transparent);
 }
 
 .stage-tag {
@@ -976,7 +980,7 @@ html.preload-bypassed .earth-hero .hero-loader {
   gap: 8px;
   font-size: 11px;
   letter-spacing: 0.22em;
-  color: #4d9aff;
+  color: #cbd5e1;
   text-transform: uppercase;
 }
 
@@ -984,8 +988,8 @@ html.preload-bypassed .earth-hero .hero-loader {
   width: 6px;
   height: 6px;
   border-radius: 50%;
-  background: #4d9aff;
-  box-shadow: 0 0 8px #4d9aff;
+  background: #ffffff;
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.8);
   animation: radarPulse 2s infinite;
 }
 
@@ -1001,21 +1005,21 @@ html.preload-bypassed .earth-hero .hero-loader {
 .stage-rule {
   width: 100%;
   height: 1px;
-  background: linear-gradient(90deg, rgba(77, 154, 255, 0.45), transparent);
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.22), transparent);
 }
 
 .stage-desc {
   font-size: clamp(13px, 1.0vw, 14.5px);
   line-height: 1.6;
-  color: #cbd5e1;
+  color: #94a3b8;
   margin: 0;
 }
 
-/* Specs Row */
+/* Specs Row - Monotone */
 .stage-specs-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 12px;
+  gap: 10px;
   margin-top: 4px;
   padding-top: 14px;
   border-top: 1px solid rgba(255, 255, 255, 0.08);
@@ -1025,6 +1029,10 @@ html.preload-bypassed .earth-hero .hero-loader {
   display: flex;
   flex-direction: column;
   gap: 2px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 10px;
+  padding: 10px 12px;
 }
 
 .stage-spec-val {
@@ -1041,7 +1049,7 @@ html.preload-bypassed .earth-hero .hero-loader {
   text-transform: uppercase;
 }
 
-/* Feature List */
+/* Feature List - Monotone */
 .stage-feature-list {
   display: flex;
   flex-direction: column;
@@ -1054,7 +1062,7 @@ html.preload-bypassed .earth-hero .hero-loader {
   align-items: flex-start;
   gap: 12px;
   background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: 12px;
   padding: 10px 14px;
   text-align: left;
@@ -1062,8 +1070,9 @@ html.preload-bypassed .earth-hero .hero-loader {
 
 .stage-feature-num {
   font-size: 11px;
-  color: #4d9aff;
-  background: rgba(77, 154, 255, 0.12);
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.12);
   padding: 2px 7px;
   border-radius: 6px;
   font-weight: 600;
@@ -1084,7 +1093,7 @@ html.preload-bypassed .earth-hero .hero-loader {
   line-height: 1.4;
 }
 
-/* Division Grid */
+/* Division Grid - Monotone */
 .stage-division-grid {
   display: flex;
   flex-direction: column;
@@ -1097,8 +1106,8 @@ html.preload-bypassed .earth-hero .hero-loader {
   align-items: center;
   justify-content: space-between;
   padding: 10px 14px;
-  background: rgba(77, 154, 255, 0.06);
-  border: 1px solid rgba(77, 154, 255, 0.16);
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.09);
   border-radius: 12px;
   text-decoration: none;
   transition: all 0.25s ease;
@@ -1106,8 +1115,8 @@ html.preload-bypassed .earth-hero .hero-loader {
 }
 
 .stage-div-chip:hover {
-  background: rgba(77, 154, 255, 0.15);
-  border-color: rgba(77, 154, 255, 0.4);
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.24);
   transform: translateX(3px);
 }
 
@@ -1146,12 +1155,12 @@ html.preload-bypassed .earth-hero .hero-loader {
   align-items: flex-end;
   gap: 7px;
   pointer-events: none;
-  background: rgba(3, 7, 18, 0.72);
+  background: rgba(12, 14, 18, 0.82);
   backdrop-filter: blur(16px);
-  border: 1px solid rgba(77, 154, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.12);
   border-radius: 12px;
   padding: 9px 15px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7);
   transition: opacity 0.4s ease;
 }
 
@@ -1169,8 +1178,8 @@ html.preload-bypassed .earth-hero .hero-loader {
   width: 6px;
   height: 6px;
   border-radius: 50%;
-  background: #00ffaa;
-  box-shadow: 0 0 8px #00ffaa;
+  background: #ffffff;
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.8);
   animation: radarPulse 1.5s infinite;
 }
 
@@ -1193,8 +1202,8 @@ html.preload-bypassed .earth-hero .hero-loader {
   display: block;
   height: 100%;
   width: 0%;
-  background: #4d9aff;
-  box-shadow: 0 0 8px #4d9aff;
+  background: #ffffff;
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.5);
   transition: width 0.15s ease;
 }
 
@@ -1302,10 +1311,10 @@ html.preload-bypassed .earth-hero .hero-loader {
     box-sizing: border-box;
     align-items: center;
     padding: 10px 14px;
-    background: rgba(3, 7, 18, 0.88);
+    background: rgba(12, 14, 18, 0.90);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
-    border: 1px solid rgba(77, 154, 255, 0.28);
+    border: 1px solid rgba(255, 255, 255, 0.14);
     box-shadow: 0 12px 40px rgba(0, 0, 0, 0.85);
   }
 
@@ -1969,25 +1978,15 @@ body.page-redirecting main {
 
 /* ── Origin Story Callout ────────────────────────────────── */
 .lume-origin-banner {
-  background: linear-gradient(135deg, rgba(7, 20, 48, 0.7) 0%, rgba(10, 37, 64, 0.5) 100%);
-  border: 1px solid rgba(77, 154, 255, 0.22);
-  border-radius: 18px;
-  padding: clamp(24px, 4vw, 40px);
-  margin-bottom: 36px;
+  background: #ffffff;
+  border: 1px solid rgba(16, 28, 44, 0.08);
+  border-left: 4px solid #101c2c;
+  border-radius: 14px;
+  padding: 24px 26px;
+  margin-bottom: 24px;
   position: relative;
   overflow: hidden;
-  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.35);
-  backdrop-filter: blur(12px);
-}
-
-.lume-origin-banner::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 4px;
-  height: 100%;
-  background: linear-gradient(180deg, #4d9aff, #0052cc);
+  box-shadow: 0 2px 10px rgba(16, 28, 44, 0.04);
 }
 
 .lume-origin-badge {
@@ -1995,22 +1994,23 @@ body.page-redirecting main {
   align-items: center;
   gap: 8px;
   font-size: 11px;
-  letter-spacing: 0.16em;
-  color: #4d9aff;
+  letter-spacing: 0.14em;
+  color: #101c2c;
+  font-weight: 700;
   text-transform: uppercase;
-  margin-bottom: 14px;
+  margin-bottom: 10px;
 }
 
 .lume-origin-text {
-  font-size: clamp(15px, 1.3vw, 17px);
-  line-height: 1.75;
-  color: rgba(255, 255, 255, 0.88);
+  font-size: clamp(14px, 1.2vw, 15.5px);
+  line-height: 1.65;
+  color: #334155;
   margin-bottom: 0;
 }
 
 .lume-origin-text strong {
-  color: #ffffff;
-  font-weight: 600;
+  color: #101c2c;
+  font-weight: 700;
 }
 
 /* ── 4 Principles Grid ───────────────────────────────────── */
@@ -2140,180 +2140,155 @@ body.page-redirecting main {
   }
 }
 
-/* ── 01. Bento Grid Principles Cards (Colorful & Animated) ─────── */
+/* ── 01. Bento Grid Principles Cards (Modern Swiss Editorial Design) ── */
 .bento-card {
   position: relative;
-  background: rgba(10, 18, 34, 0.75);
-  border-radius: 20px;
-  padding: 30px 28px;
+  background: #ffffff;
+  border: 1px solid rgba(16, 28, 44, 0.08);
+  border-radius: 16px;
+  padding: 24px 22px;
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
-  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1),
-              box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1),
-              border-color 0.35s ease,
-              background-color 0.35s ease;
-  will-change: transform, box-shadow;
+  box-shadow: 0 2px 10px rgba(16, 28, 44, 0.03), 0 1px 2px rgba(16, 28, 44, 0.02);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+  will-change: transform;
 }
 
 .bento-card::before {
   content: '';
   position: absolute;
   top: 0;
-  left: -150%;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(
-    100deg,
-    transparent 20%,
-    rgba(255, 255, 255, 0.05) 45%,
-    rgba(255, 255, 255, 0.18) 50%,
-    rgba(255, 255, 255, 0.05) 55%,
-    transparent 80%
-  );
-  transform: skewX(-24deg);
-  transition: left 0.75s ease;
-  pointer-events: none;
-  z-index: 5;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #101c2c, #4d9aff);
+  opacity: 0;
+  transition: opacity 0.25s ease;
 }
 
 .bento-card:hover::before {
-  left: 170%;
+  opacity: 1;
 }
 
 .bento-card:hover {
-  transform: translateY(-8px) scale(1.015);
+  transform: translateY(-3px);
+  border-color: rgba(16, 28, 44, 0.16);
+  box-shadow: 0 12px 28px rgba(16, 28, 44, 0.07);
 }
 
-/* Bento Acid Lime (Principle 01) */
-.bento-card-acid {
-  --bento-c: #c9ff4a;
-  --bento-rgb: 201, 255, 74;
-  border: 1px solid rgba(201, 255, 74, 0.28);
-  border-top: 3px solid #c9ff4a;
-  background: linear-gradient(155deg, rgba(201, 255, 74, 0.1) 0%, rgba(9, 18, 32, 0.88) 55%);
-  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(201, 255, 74, 0.2);
-}
-.bento-card-acid:hover {
-  border-color: rgba(201, 255, 74, 0.65);
-  box-shadow: 0 24px 56px -8px rgba(201, 255, 74, 0.28), 0 0 24px rgba(201, 255, 74, 0.14);
-}
-.bento-card-acid .bento-num {
-  color: #c9ff4a;
-  text-shadow: 0 0 12px rgba(201, 255, 74, 0.5);
-}
-
-/* Bento Coral (Principle 02) */
-.bento-card-coral {
-  --bento-c: #ef7669;
-  --bento-rgb: 239, 118, 105;
-  border: 1px solid rgba(239, 118, 105, 0.28);
-  border-top: 3px solid #ef7669;
-  background: linear-gradient(155deg, rgba(239, 118, 105, 0.1) 0%, rgba(9, 18, 32, 0.88) 55%);
-  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(239, 118, 105, 0.2);
-}
-.bento-card-coral:hover {
-  border-color: rgba(239, 118, 105, 0.65);
-  box-shadow: 0 24px 56px -8px rgba(239, 118, 105, 0.28), 0 0 24px rgba(239, 118, 105, 0.14);
-}
-.bento-card-coral .bento-num {
-  color: #ef7669;
-  text-shadow: 0 0 12px rgba(239, 118, 105, 0.5);
+.bento-card .bento-num {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: #101c2c;
+  background: rgba(16, 28, 44, 0.05);
+  border: 1px solid rgba(16, 28, 44, 0.08);
+  padding: 3px 9px;
+  border-radius: 6px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
+  margin-bottom: 12px;
+  transition: all 0.25s ease;
 }
 
-/* Bento Cosmic Phoenix Card */
+.bento-card:hover .bento-num {
+  background: #101c2c;
+  color: #ffffff;
+  border-color: #101c2c;
+}
+
+/* Principles Cards */
+.bento-card-acid,
+.bento-card-coral,
+.bento-card-violet,
+.bento-card-sky {
+  background: #ffffff;
+  border: 1px solid rgba(16, 28, 44, 0.08);
+}
+
+/* Bento Cosmic Phoenix Card (Striking Dark Accent Card) */
 .bento-card-cosmic {
-  border: 1px solid rgba(147, 197, 253, 0.35) !important;
-  border-top: 3px solid #60a5fa !important;
-  background: radial-gradient(circle at center, #1e3a8a 0%, #071226 85%) !important;
-  box-shadow: 0 16px 44px rgba(30, 58, 138, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.2) !important;
+  background: #101c2c !important;
+  color: #ffffff !important;
+  border: 1px solid #101c2c !important;
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(16, 28, 44, 0.12) !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+  align-items: center !important;
+  text-align: center !important;
 }
 .bento-card-cosmic:hover {
-  border-color: rgba(147, 197, 253, 0.7) !important;
-  box-shadow: 0 26px 60px -8px rgba(59, 130, 246, 0.38), 0 0 28px rgba(96, 165, 250, 0.2) !important;
+  transform: translateY(-3px);
+  box-shadow: 0 16px 36px rgba(16, 28, 44, 0.2) !important;
 }
-
-/* Bento Violet (Principle 03) */
-.bento-card-violet {
-  --bento-c: #9685f5;
-  --bento-rgb: 150, 133, 245;
-  border: 1px solid rgba(150, 133, 245, 0.28);
-  border-top: 3px solid #9685f5;
-  background: linear-gradient(155deg, rgba(150, 133, 245, 0.1) 0%, rgba(9, 18, 32, 0.88) 55%);
-  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(150, 133, 245, 0.2);
+.bento-card-cosmic .phoenix-pulse-rings .phoenix-ring {
+  border-color: rgba(255, 255, 255, 0.08) !important;
 }
-.bento-card-violet:hover {
-  border-color: rgba(150, 133, 245, 0.65);
-  box-shadow: 0 24px 56px -8px rgba(150, 133, 245, 0.28), 0 0 24px rgba(150, 133, 245, 0.14);
-}
-.bento-card-violet .bento-num {
-  color: #9685f5;
-  text-shadow: 0 0 12px rgba(150, 133, 245, 0.5);
-}
-
-/* Bento Sky Blue (Principle 04) */
-.bento-card-sky {
-  --bento-c: #50a5ff;
-  --bento-rgb: 80, 165, 255;
-  border: 1px solid rgba(80, 165, 255, 0.28);
-  border-top: 3px solid #50a5ff;
-  background: linear-gradient(155deg, rgba(80, 165, 255, 0.1) 0%, rgba(9, 18, 32, 0.88) 55%);
-  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(80, 165, 255, 0.2);
-}
-.bento-card-sky:hover {
-  border-color: rgba(80, 165, 255, 0.65);
-  box-shadow: 0 24px 56px -8px rgba(80, 165, 255, 0.28), 0 0 24px rgba(80, 165, 255, 0.14);
-}
-.bento-card-sky .bento-num {
-  color: #50a5ff;
-  text-shadow: 0 0 12px rgba(80, 165, 255, 0.5);
-}
-
-/* Bento Honey Gold (Single Table Guarantee) */
-.bento-card-gold {
-  --bento-c: #ffd36d;
-  --bento-rgb: 255, 211, 109;
-  border: 1px solid rgba(255, 211, 109, 0.3) !important;
-  border-top: 3px solid #ffd36d !important;
-  background: linear-gradient(155deg, rgba(255, 211, 109, 0.11) 0%, rgba(9, 18, 32, 0.88) 55%) !important;
-  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 211, 109, 0.2);
-}
-.bento-card-gold:hover {
-  border-color: rgba(255, 211, 109, 0.7) !important;
-  box-shadow: 0 24px 56px -8px rgba(255, 211, 109, 0.28), 0 0 24px rgba(255, 211, 109, 0.14);
-}
-.bento-badge-gold {
-  color: #ffd36d;
-  font-size: 11px;
-  letter-spacing: 0.14em;
-  font-weight: 600;
-  text-shadow: 0 0 10px rgba(255, 211, 109, 0.4);
-}
-
-/* ── Bento Card Text Visibility & Typography ── */
-.bento-card .bento-card-title {
+.bento-card-cosmic .phoenix-stat {
   color: #ffffff !important;
   font-family: var(--font-head);
-  font-size: 19px;
+  font-size: clamp(38px, 6vw, 48px);
+  font-weight: 800;
+  line-height: 1;
+  margin: 6px 0;
+  text-shadow: none !important;
+}
+.bento-card-cosmic .phoenix-year {
+  color: #94a3b8 !important;
+  font-size: 10.5px;
+  letter-spacing: 0.16em;
+  font-family: var(--font-mono);
+}
+.bento-card-cosmic .phoenix-label {
+  color: #cbd5e1 !important;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+/* Bento Honey Gold (Operating Promise Card) */
+.bento-card-gold {
+  background: #ffffff !important;
+  border: 1px solid rgba(16, 28, 44, 0.08) !important;
+  border-left: 4px solid #101c2c !important;
+  border-radius: 16px;
+  box-shadow: 0 2px 10px rgba(16, 28, 44, 0.03);
+}
+.bento-card-gold:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 28px rgba(16, 28, 44, 0.07) !important;
+}
+.bento-badge-gold {
+  color: #101c2c;
+  font-size: 11px;
+  letter-spacing: 0.14em;
   font-weight: 700;
-  letter-spacing: -0.01em;
-  margin-top: 10px;
+  font-family: var(--font-mono);
+}
+
+/* Bento Card Text & Typography */
+.bento-card .bento-card-title {
+  color: #101c2c !important;
+  font-family: var(--font-head);
+  font-size: 17.5px;
+  font-weight: 700;
+  letter-spacing: -0.015em;
+  margin-top: 0;
   margin-bottom: 8px;
-  line-height: 1.35;
+  line-height: 1.3;
 }
 
 .bento-card .bento-card-desc {
-  color: rgba(255, 255, 255, 0.82) !important;
-  font-size: 14px !important;
-  line-height: 1.65 !important;
+  color: #475569 !important;
+  font-size: 13.5px !important;
+  line-height: 1.6 !important;
+  margin: 0 !important;
   display: block !important;
-  -webkit-line-clamp: unset !important;
-  line-clamp: unset !important;
-  overflow: visible !important;
-  max-height: none !important;
-  margin: 0;
 }
 
 .bento-card .tech-pills {
@@ -2324,9 +2299,9 @@ body.page-redirecting main {
 }
 
 .bento-card .tech-pill {
-  color: #ffd36d !important;
-  border: 1px solid rgba(255, 211, 109, 0.35) !important;
-  background: rgba(255, 211, 109, 0.08) !important;
+  color: #101c2c !important;
+  border: 1px solid rgba(16, 28, 44, 0.10) !important;
+  background: rgba(16, 28, 44, 0.04) !important;
   font-size: 11px !important;
   padding: 5px 12px !important;
   border-radius: 20px !important;
@@ -2334,46 +2309,51 @@ body.page-redirecting main {
   font-weight: 500 !important;
   display: inline-flex;
   align-items: center;
-  transition: background 0.25s ease, border-color 0.25s ease, color 0.25s ease;
+  transition: all 0.25s ease;
 }
 
 .bento-card .tech-pill:hover {
-  background: rgba(255, 211, 109, 0.2) !important;
-  border-color: rgba(255, 211, 109, 0.6) !important;
+  background: #101c2c !important;
+  border-color: #101c2c !important;
   color: #ffffff !important;
 }
 
-/* Bento Grid Layout across viewports (keeps card design entirely same, prevents any text clipping) */
+/* Bento Grid Layout across viewports - Mobile Optimized & Compact */
 @media (max-width: 680px) {
   .whoweare-section .bento-grid {
     display: flex !important;
     flex-direction: column !important;
-    gap: 0 !important;
-    padding-bottom: 12vh;
+    gap: 12px !important;
+    padding-bottom: 0 !important;
   }
 
   .whoweare-section .bento-card {
-    position: sticky;
-    top: 76px;
-    z-index: 1;
-    width: 100%;
-    min-height: 260px;
-    margin: 0 0 22vh;
+    position: relative !important;
+    top: auto !important;
+    z-index: auto !important;
+    width: 100% !important;
+    min-height: 0 !important;
+    height: auto !important;
+    margin: 0 !important;
+    padding: 18px 18px !important;
     grid-column: auto !important;
     grid-row: auto !important;
-    transform: translateZ(0);
-    transition: transform 420ms cubic-bezier(.16, 1, .3, 1), opacity 420ms ease, filter 420ms ease;
-    will-change: transform;
+    transform: none !important;
+    box-shadow: 0 2px 8px rgba(16, 28, 44, 0.04) !important;
   }
 
-  .whoweare-section .bento-card:nth-child(2) { z-index: 2; }
-  .whoweare-section .bento-card:nth-child(3) { z-index: 3; }
-  .whoweare-section .bento-card:nth-child(4) { z-index: 4; }
-  .whoweare-section .bento-card:nth-child(5) { z-index: 5; }
-  .whoweare-section .bento-card:nth-child(6) { z-index: 6; }
+  .whoweare-section .bento-card:nth-child(n) {
+    top: auto !important;
+    z-index: auto !important;
+  }
 
-  .whoweare-section .bento-card:last-child { margin-bottom: 0; }
-  .whoweare-section .bento-card p { max-width: 38ch; }
+  .whoweare-section .bento-card:last-child {
+    margin-bottom: 0 !important;
+  }
+
+  .whoweare-section .bento-card p {
+    max-width: 100%;
+  }
 }
 
 @media (min-width: 681px) and (max-width: 1024px) {

@@ -1238,13 +1238,17 @@ async function initEarth() {
       bar3.style.width = `${(b3 * 100).toFixed(0)}%`;
 
       if (sp < 0.16) {
+<<<<<<< Updated upstream
         phaseText.textContent = 'ORBITAL VIEW · INITIAL';
+=======
+        phaseText.textContent = 'ORBITAL VIEW \u2014 INITIAL';
+>>>>>>> Stashed changes
       } else if (sp < 0.44) {
-        phaseText.textContent = '01 // PLANETARY HORIZON';
+        phaseText.textContent = '01 \u2014 PLANETARY HORIZON';
       } else if (sp < 0.72) {
-        phaseText.textContent = '02 // VELOCITY & SCALE';
+        phaseText.textContent = '02 \u2014 VELOCITY & SCALE';
       } else {
-        phaseText.textContent = '03 // SPECIALIZED SUITES';
+        phaseText.textContent = '03 \u2014 SPECIALIZED SUITES';
       }
     }
 

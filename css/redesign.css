@@ -306,6 +306,14 @@ img, canvas { max-width: 100%; }
   z-index: 2;
 }
 
+/* Keep the hero in normal document flow so its headline does not repeat over later sections. */
+.earth-hero {
+  position: relative;
+  height: min(100vh, 860px);
+  min-height: 620px;
+  z-index: 1;
+}
+
 /* Override the parent .hero background */
 .hero.earth-hero {
   background: #000000;
@@ -2319,6 +2327,81 @@ body.page-redirecting main {
 }
 
 /* Bento Grid Layout across viewports - Mobile Optimized & Compact */
+/* Accessible monotone card system: graphite surfaces, blue-gray accents, high-contrast copy. */
+.bento-card,
+.solution-card,
+.research-card,
+.suite-card,
+.service-detail-card,
+.portfolio-card,
+.pricing-card {
+  background: #f4f7fb !important;
+  color: #142033 !important;
+  border: 1px solid #cbd5e1 !important;
+  box-shadow: 0 10px 26px rgba(15, 23, 42, 0.08) !important;
+}
+
+.bento-card::before,
+.solution-card::before,
+.research-card::before,
+.suite-card::before {
+  background: #3b82f6 !important;
+}
+
+.bento-card h2,
+.bento-card h3,
+.bento-card .bento-card-title,
+.solution-card h2,
+.solution-card h3,
+.research-card h2,
+.research-card h3,
+.suite-card h2,
+.suite-card h3,
+.suite-card .suite-card-name {
+  color: #142033 !important;
+  opacity: 1 !important;
+}
+
+.bento-card p,
+.bento-card .bento-card-desc,
+.solution-card p,
+.research-card p,
+.suite-card p,
+.suite-card .suite-card-desc,
+.suite-card .suite-card-tagline {
+  color: #334155 !important;
+  opacity: 1 !important;
+}
+
+.bento-card .bento-num,
+.bento-card .tech-pill,
+.suite-card .suite-card-num {
+  color: #1d4ed8 !important;
+  background: #e2e8f0 !important;
+  border-color: #b8c5d6 !important;
+}
+
+.bento-card-cosmic,
+.bento-card-cosmic .phoenix-stat,
+.bento-card-cosmic .phoenix-label,
+.bento-card-cosmic .phoenix-year {
+  background: #1e293b !important;
+  color: #f8fafc !important;
+}
+
+.bento-card-cosmic .phoenix-label,
+.bento-card-cosmic .phoenix-year { color: #dbeafe !important; }
+
+/* Final flow override: the hero should scroll away once, not pin over every section. */
+.earth-hero,
+.hero.earth-hero {
+  position: relative !important;
+  top: auto !important;
+  height: min(100vh, 860px) !important;
+  min-height: 620px !important;
+  z-index: 1 !important;
+}
+
 @media (max-width: 680px) {
   .whoweare-section .bento-grid {
     display: flex !important;

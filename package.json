@@ -1,0 +1,14 @@
+{
+  "name": "nexora-root",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "npm --prefix nexora-main run dev",
+    "start": "npm --prefix nexora-main start",
+    "build": "npm --prefix nexora-main run build",
+    "install-all": "npm --prefix nexora-main install"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

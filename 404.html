@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 &mdash; Page Not Found | Nexora</title>
+    <meta name="description" content="The page you are looking for does not exist.">
+    <meta name="theme-color" content="#0052cc">
+    <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+    <link rel="icon" href="images/favicon.png" type="image/png" sizes="32x32">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700;800&amp;family=JetBrains+Mono:wght@400;500&amp;family=Inter:wght@300;400;500&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css?v=4">
+    <style>
+        .error-page {
+            min-height: 100svh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 40px var(--gutter);
+            gap: 24px;
+        }
+
+        .error-code {
+            font-family: var(--font-head);
+            font-size: clamp(100px, 20vw, 240px);
+            font-weight: 800;
+            line-height: 1;
+            letter-spacing: -0.06em;
+            color: var(--t1);
+            opacity: 0.08;
+        }
+
+        .error-headline {
+            font-family: var(--font-head);
+            font-size: clamp(28px, 4vw, 48px);
+            font-weight: 800;
+            line-height: 1.1;
+            letter-spacing: -0.03em;
+            color: var(--t1);
+            margin-top: -60px;
+        }
+
+        .error-body {
+            color: var(--t2);
+            font-size: clamp(14px, 1.5vw, 16px);
+            line-height: 1.7;
+            max-width: 420px;
+        }
+
+        .error-cta {
+            font-family: var(--font-mono);
+            font-size: 12px;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            color: var(--bg);
+            background: var(--fire);
+            padding: 16px 32px;
+            display: inline-block;
+            transition: background 0.2s;
+            margin-top: 8px;
+        }
+
+        .error-cta:hover {
+            background: var(--t1);
+        }
+
+        .error-meta {
+            display: flex;
+            gap: 24px;
+            margin-top: 24px;
+        }
+
+        .error-meta a {
+            font-family: var(--font-mono);
+            font-size: 10px;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--t3);
+            transition: color 0.2s;
+        }
+
+        .error-meta a:hover {
+            color: var(--fire);
+        }
+    </style>
+</head>
+
+<body>
+    <nav id="nav" class="nav scrolled" aria-label="Main navigation">
+        <div class="nav-inner">
+            <a href="index.html" class="nav-logo" aria-label="Nexora home"><img src="images/nexora_nav_logo.svg" alt="Nexora Digital" class="nav-logo-img"></a>
+            <div class="nav-links">
+        <a href="index.html#about" class="nav-link">About</a>
+        <a href="index.html#services" class="nav-link">Services</a>
+        <a href="packages.html" class="nav-link">Packages</a>
+      </div>
+            <a href="index.html#cta" class="nav-cta">Initiate &rarr;</a>
+            <button class="nav-hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
+                <span></span><span></span>
+            </button>
+        </div>
+        <div class="nav-mobile-menu" id="mobile-menu">
+      <a href="index.html#about">About</a>
+      <a href="index.html#services">Services</a>
+      <a href="packages.html">Packages</a>
+      <a href="index.html#cta" class="mobile-cta">Initiate &rarr;</a>
+    </div>
+    </nav>
+
+    <main class="error-page">
+        <div class="error-code">404</div>
+        <h1 class="error-headline">Page not found.</h1>
+        <p class="error-body">The system could not resolve this route. It may have been moved, removed, or never
+            existed.</p>
+        <a href="index.html" class="error-cta">Return to base &rarr;</a>
+        <div class="error-meta">
+            <a href="index.html#about">About</a>
+            <a href="index.html#services">Services</a>
+            <a href="packages.html">Packages</a>
+        </div>
+    </main>
+
+    <script>
+        const hamburger = document.getElementById('hamburger');
+        const mobileMenu = document.getElementById('mobile-menu');
+        if (hamburger) {
+            hamburger.addEventListener('click', () => {
+                const isOpen = mobileMenu.classList.toggle('open');
+                hamburger.setAttribute('aria-expanded', isOpen);
+            });
+        }
+    </script>
+</body>
+
+</html>

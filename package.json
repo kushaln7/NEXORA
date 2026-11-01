@@ -1,12 +1,22 @@
 {
-  "name": "nexora-root",
+  "name": "nexora-admin",
   "version": "1.0.0",
   "private": true,
+  "description": "Nexora website with admin dashboard",
+  "main": "server.js",
   "scripts": {
-    "dev": "npm --prefix nexora-main run dev",
-    "start": "npm --prefix nexora-main start",
-    "build": "npm --prefix nexora-main run build",
-    "install-all": "npm --prefix nexora-main install"
+    "start": "node server.js",
+    "dev": "node --watch server.js",
+    "build": "node -e \"console.log('Build complete')\""
+  },
+  "dependencies": {
+    "express": "^4.21.2",
+    "express-session": "^1.18.1",
+    "bcryptjs": "^2.4.3",
+    "cheerio": "^1.0.0"
+  },
+  "overrides": {
+    "qs": "^6.17.1"
   },
   "engines": {
     "node": ">=18.0.0"

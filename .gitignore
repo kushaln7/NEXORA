@@ -10,6 +10,9 @@ node_modules/
 .env.local
 .env.production
 
+# Admin credentials & local runtime data
+data/admin.json
+
 # Build output
 dist/
 build/

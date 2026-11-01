@@ -1,0 +1,23 @@
+# Dependencies
+node_modules/
+.pnpm-store/
+
+# Environment secrets
+.env
+.env.local
+.env.production
+
+# Admin credentials & local runtime data
+data/admin.json
+
+# Build output
+dist/
+build/
+.cache/
+
+# OS & Editor files
+.DS_Store
+Thumbs.db
+Desktop.ini
+.vscode/
+.idea/

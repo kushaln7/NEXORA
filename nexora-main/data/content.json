@@ -1,0 +1,256 @@
+{
+  "_lastModified": "2026-09-25T17:50:00.000Z",
+  "home": {
+    "hero": {
+      "label": "NEXT-GEN DIGITAL PRODUCT STUDIO",
+      "headline1": "We Build Software",
+      "headline2": "That Holds Up.",
+      "subtitle": "Strategy, design and engineering from one senior team in Hyderabad. No handoffs, no layers, no waiting on someone else's roadmap."
+    },
+    "stats": {
+      "projects": "7+",
+      "projectsLabel": "products live and in use",
+      "timeline": "2–4 weeks",
+      "timelineLabel": "to deliver the project",
+      "worth": "₹8L+",
+      "worthLabel": "projects worth shipped",
+      "team": "5",
+      "teamLabel": "senior team, no layers"
+    },
+    "about": {
+      "sectionBadge": "ABOUT LAUNCHLUME",
+      "sectionTitle": "We build the software<br><span class=\"hl-accent\">a business runs on.</span>",
+      "sectionSubtitle": "LaunchLume is a five-person product studio in Hyderabad. We shipped paid client work before we called ourselves a studio.",
+      "story": "We were paid to build before we called ourselves a studio. LaunchLume started with five of us studying at NIAT. Through the Brave program we took on real client work — not coursework, not concepts — and delivered more than ₹8 lakh of it before we ever registered a company. That order is the whole point. Most studios start with a name and go looking for proof. We had the proof first: shipped products, paid invoices, clients who came back. So the five of us still sit at one table in Hyderabad. We take fewer projects than we could, stay close to every decision, and ship software people actually use.",
+      "principles": [
+        {
+          "num": "01",
+          "title": "Clarity over theatre",
+          "desc": "The hard truth early is more valuable than a polished surprise late."
+        },
+        {
+          "num": "02",
+          "title": "Momentum with intent",
+          "desc": "Speed matters when it is pointed at the right outcome."
+        },
+        {
+          "num": "03",
+          "title": "Own the outcome",
+          "desc": "We stay accountable beyond the handoff and the happy path."
+        },
+        {
+          "num": "04",
+          "title": "Craft is strategy",
+          "desc": "Thoughtful details change how a product is trusted, adopted, and remembered."
+        }
+      ]
+    },
+    "services": [
+      {
+        "id": "01",
+        "category": "Build",
+        "title": "Web development",
+        "description": "Next.js web applications tailored to business goals, hardened with Core Web Vitals discipline, semantic structure, and strict performance budgets.",
+        "solves": ["Next.js applications", "Core Web Vitals", "Semantic architecture"],
+        "stack": ["Next.js", "React", "TypeScript", "Cloudflare"]
+      },
+      {
+        "id": "02",
+        "category": "Design",
+        "title": "UI/UX design",
+        "description": "Minimal, highly detailed interfaces focused on visual hierarchy, smooth transitions, thoughtful micro-interactions, and premium layouts.",
+        "solves": ["UX architecture", "Interface systems", "Micro-interactions"],
+        "stack": ["Figma", "Framer", "Storybook", "Rive"]
+      },
+      {
+        "id": "03",
+        "category": "Operate",
+        "title": "ERP systems",
+        "description": "Bespoke internal management platforms and enterprise ERPs designed for scale, data safety, complex workflows, and clean domain models.",
+        "solves": ["Internal platforms", "Complex workflows", "Clean domain models"],
+        "stack": ["Next.js", "PostgreSQL", "TypeScript", "AWS"]
+      },
+      {
+        "id": "04",
+        "category": "Automate",
+        "title": "AI integrations",
+        "description": "Intelligent agents, conversational bots, LLMs, and workflow automation built with clear guardrails and audit-friendly logging.",
+        "solves": ["Intelligent agents", "Conversational systems", "Auditable workflows"],
+        "stack": ["OpenAI", "Python", "LangGraph", "Pinecone"]
+      },
+      {
+        "id": "05",
+        "category": "Discover",
+        "title": "SEO optimization",
+        "description": "Technical search positioning, answer-first structures, rich schema markup, and strict Core Web Vitals for stronger organic visibility.",
+        "solves": ["Technical SEO", "Answer-first content", "Schema systems"],
+        "stack": ["Schema.org", "Search Console", "Lighthouse", "Next.js"]
+      },
+      {
+        "id": "06",
+        "category": "Transact",
+        "title": "Booking platforms",
+        "description": "Reliable online booking, reservation desks, calendar integrations, and transactional pipelines tailored to travel and scheduling operations.",
+        "solves": ["Reservation engines", "Calendar integration", "Payment workflows"],
+        "stack": ["Stripe", "PostgreSQL", "React", "Cloudflare"]
+      },
+      {
+        "id": "07",
+        "category": "Observe",
+        "title": "Dashboard systems",
+        "description": "Custom analytics hubs, referral portals, and administrative command centers with clear, decision-ready executive reporting.",
+        "solves": ["Analytics hubs", "Admin command centers", "Executive reporting"],
+        "stack": ["ClickHouse", "PostgreSQL", "Recharts", "Next.js"]
+      },
+      {
+        "id": "08",
+        "category": "Define",
+        "title": "Branding & identity",
+        "description": "Distinctive brand systems, custom typography, palettes, and digital rules that elevate products into premium enterprise experiences.",
+        "solves": ["Brand systems", "Custom typography", "Digital guidelines"],
+        "stack": ["Figma", "Illustrator", "After Effects", "Framer"]
+      },
+      {
+        "id": "09",
+        "category": "Sustain",
+        "title": "Maintenance & support",
+        "description": "Continuous system telemetry, cloud infrastructure updates, prompt tuning, monthly enhancements, and responsive developer availability.",
+        "solves": ["System telemetry", "Cloud updates", "Feature enhancements"],
+        "stack": ["Sentry", "Cloudflare", "AWS", "GitHub Actions"]
+      },
+      {
+        "id": "10",
+        "category": "Grow",
+        "title": "Digital marketing",
+        "description": "Data-driven campaigns spanning paid media, social strategy, and email automation, designed to scale growth predictably.",
+        "solves": ["Paid media", "Social strategy", "Email automation"],
+        "stack": ["GA4", "HubSpot", "Meta Ads", "Google Ads"]
+      }
+    ],
+    "portfolio": [
+      {
+        "id": "01",
+        "category": "Engineering Operations",
+        "year": "2026",
+        "name": "SASEC Engineering Dashboard",
+        "description": "A workforce, attendance, payroll, and field-operations platform.",
+        "details": "An internal operations dashboard that brings workforce tracking, approvals, attendance, payroll, teams, vehicles, and reporting into one interface for JSW operations.",
+        "tags": ["ERP systems", "Dashboard systems", "Web development"],
+        "quote": "We had no real-time visibility into who was on site or what we were owed. We brought LaunchLume in to fix that. Billing that used to take days now takes minutes — that's the difference in how fast we get paid by JSW.",
+        "clientName": "Chandra Sekhar",
+        "clientRole": "Director, SASEC Engineering"
+      },
+      {
+        "id": "02",
+        "category": "Architecture & Interiors",
+        "year": "2026",
+        "name": "4 Folds Design Studio",
+        "description": "An immersive architectural portfolio built around spaces that breathe.",
+        "details": "A visual-first studio website that presents architectural philosophy, services, and selected work through an atmospheric digital experience.",
+        "tags": ["Web development", "UI/UX design", "Portfolio experience"],
+        "quote": "People found us through word of mouth for years — the work spoke for itself, but online we didn't exist. LaunchLume gave us a website that finally matches what we actually do. Now new clients see the quality before they even walk in.",
+        "clientName": "Harshini",
+        "clientRole": "4 Folds Design Studio"
+      },
+      {
+        "id": "03",
+        "category": "Food & Beverage",
+        "year": "2026",
+        "name": "Yeskimós Ice Cream",
+        "description": "A consumer and franchise website for a Hyderabad ice cream brand.",
+        "details": "A brand-led digital storefront for discovering products, understanding the YESKIMOS story, finding the Hyderabad parlour, and exploring franchise opportunities.",
+        "tags": ["Web development", "Branding & identity", "Digital marketing"],
+        "quote": "We wanted people to feel the brand before they even walked into the parlour. LaunchLume gave us a site that does that — the menu, our story, where to find us, and how to franchise with us, all in one place that actually looks like YESKIMOS.",
+        "clientName": "Venkata Rao",
+        "clientRole": "YESKIMOS"
+      },
+      {
+        "id": "04",
+        "category": "Education & Institutions",
+        "year": "2026",
+        "name": "Master Guidance Institute",
+        "description": "A clean, professional academic portal and institutional website.",
+        "details": "End-to-end web portal providing program information, admissions guidance, and student advisories.",
+        "tags": ["Web development", "UI/UX design", "Portal Systems"],
+        "quote": "It was a pleasure working with you. You delivered a clean, professional website and were responsive to our feedback throughout the project. Thank you for the great work—I’d happily recommend your services.",
+        "clientName": "Shubhangi Pant",
+        "clientRole": "Master Guidance Institute"
+      }
+    ],
+    "process": [
+      {
+        "step": "01",
+        "name": "Frame",
+        "headline": "Find the leverage",
+        "description": "We align the business case, user truth, and technical reality before committing to a build.",
+        "outcome": "Product brief"
+      },
+      {
+        "step": "02",
+        "name": "Shape",
+        "headline": "Make it tangible",
+        "description": "Rapid prototypes turn assumptions into something teams can test, debate, and improve.",
+        "outcome": "Tested direction"
+      },
+      {
+        "step": "03",
+        "name": "Build",
+        "headline": "Ship the core",
+        "description": "A senior, integrated squad moves from design system to dependable production software.",
+        "outcome": "Live product"
+      },
+      {
+        "step": "04",
+        "name": "Scale",
+        "headline": "Compound the value",
+        "description": "We measure adoption, transfer capability, and keep improving the parts that drive growth.",
+        "outcome": "Growth system"
+      }
+    ],
+    "faq": [
+      {
+        "q": "What makes your development process different?",
+        "a": "We work in short, transparent milestones with regular demos and updates, so you’re never left wondering about progress. You’ll always know what’s being built, what’s coming next, and have opportunities to provide feedback throughout the project."
+      },
+      {
+        "q": "How quickly can we start?",
+        "a": "Most engagements begin within two to four days. A focused Shape sprint is often the fastest way to align scope, team, and technical direction before a larger build."
+      },
+      {
+        "q": "Do you work with existing product teams?",
+        "a": "Yes. We frequently embed with internal teams, take ownership of a workstream, or provide a complete senior squad. The operating model is shaped around your capability gaps."
+      },
+      {
+        "q": "How much does a typical project cost?",
+        "a": "Every project is different, so we don’t use fixed pricing. After a discovery call, we’ll provide a detailed proposal with scope, timeline, milestones, and pricing—so you know exactly what you’re paying for. No hidden costs or surprise invoices."
+      },
+      {
+        "q": "Can you support the product after launch?",
+        "a": "Yes. We offer focused optimization periods and longer-term product pods for teams that want continuity through adoption and scale."
+      }
+    ],
+    "cta": {
+      "label": "TELL US WHAT YOU'RE BUILDING",
+      "headline": "Good software changes<br><em>the trajectory.</em>",
+      "body": "Share the opportunity, the obstacle, and the outcome you want. A senior product lead will review it personally."
+    }
+  },
+  "settings": {
+    "footer": {
+      "description": "Build · Launch · Scale. Independent product studio based in Hyderabad, Telangana, India. Strategy, design, and engineering at one table.",
+      "email": "contact@launchlume.in",
+      "location": "Hyderabad, Telangana, India",
+      "availability": "Accepting Q4 projects"
+    },
+    "social": {
+      "linkedin": "https://linkedin.com/company/launchlume",
+      "instagram": "https://instagram.com/launchlume",
+      "behance": "https://behance.net/launchlume"
+    },
+    "meta": {
+      "siteTitle": "LaunchLume — Product studio for ambitious software",
+      "siteDescription": "Strategy, design, and engineering for category-defining digital products. Built in Hyderabad, India.",
+      "ogImage": "https://launchlume.in/og.png"
+    }
+  }
+}

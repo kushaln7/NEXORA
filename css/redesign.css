@@ -31,7 +31,9 @@ img, canvas { max-width: 100%; }
   position: relative;
   width: 100%;
   height: 380vh;
-  background: #000000;
+  background:
+    radial-gradient(circle at 50% 42%, rgba(12, 35, 72, 0.42), transparent 48%),
+    linear-gradient(180deg, #050b18 0%, #02050c 58%, #071426 100%);
   z-index: 2;
 }
 
@@ -306,13 +308,14 @@ img, canvas { max-width: 100%; }
   z-index: 2;
 }
 
-/* Keep the hero in normal document flow so its headline does not repeat over later sections. */
-.earth-hero {
-  position: relative;
+  /* Pin the cinematic scene while the surrounding track drives its scroll progress. */
+  .earth-hero {
+  position: sticky;
+  top: 0;
   height: min(100vh, 860px);
   min-height: 620px;
   z-index: 1;
-}
+  }
 
 /* Override the parent .hero background */
 .hero.earth-hero {
